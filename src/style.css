@@ -1,0 +1,159 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+/* Sec1 upload */
+.sec1-main {
+  width: 140px;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sec1-img {
+  width: 70px;
+  height: 70px;
+}
+
+/* Homepage Sec2 */
+
+.sec2-uploading {
+  width: 355px;
+  height: 538px;
+  border: 10px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.img-uploading {
+  width: 70px;
+  height: 70px;
+}
+.bar-uploading {
+  width: 223px;
+  height: 19px;
+  background: linear-gradient(
+    90deg,
+    #b3a639 50%,
+    rgba(169, 160, 204, 0.46) 60.54%
+  );
+  border-radius: 20px;
+}
+
+.sec2-div {
+  margin: 25px 0px;
+  width: 765px;
+  background: #fffafa;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px 0px;
+}
+
+.sec2-div-empty {
+  width: 532px;
+  height: 243px;
+  background: #fffafa;
+  border-radius: 10px;
+}
+
+/* Home Tool Bar */
+
+.tool-bar {
+  height: 61px;
+  background: radial-gradient(
+    51.81% 28869.66% at 48.19% 49.18%,
+    #cdd2ff 0%,
+    #0038ff 100%
+  );
+}
+.tool-text {
+  width: 471px;
+  height: 61px;
+  background: #ffffff;
+  text-align: center;
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 35px;
+  border-radius: 50px;
+}
+
+/* Home Sample Tool */
+.sample-tool {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* CustomerName  */
+
+.CustName-main {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* BeforeSignUp */
+
+.LeftSignup {
+  border-right: 1px solid black;
+}
+.BeforeSignUp-main {
+  background-color: #fffafa;
+}
+
+.BeforeSignUp-text {
+  margin-top: 150px;
+}
+.BeforeSignUp-button {
+  background: linear-gradient(91.68deg, #2a2186 0%, #738739 97.14%);
+  border-radius: 15px;
+  font-size: 25px;
+}
+
+/* Sign In */
+
+.SignIn-button {
+  color: #4f2ab9;
+  border-radius: 15px;
+  font-size: 25px;
+  border: 1px solid #2637d0;
+}
+
+/* ForgotPwd */
+
+nav {
+  background-color: #faf6f6;
+  height: 60px;
+}
+
+/* DashBoardNavbar */
+
+.DashBoardNavbar-main {
+  background-color: #fffafa;
+}
+
+/* DashboardLeftPane */
+.DashboardLeftPane-btn {
+  border: 1px solid gray;
+}
+
+/* UploadFiles */
+
+.uploadFiles {
+  height: 350px;
+}
+
+/* FilesComp */
+.FilesComp {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+/* FileName */
+
+.FileName {
+  background: #fcf8f8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+/* FileIcons */
+
+.FileIcons {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
