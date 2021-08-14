@@ -6,26 +6,51 @@ function RightSignUp() {
     <div>
       <div className="bg-white flex flex-col w-11/12">
         <div className="font-sans text-3xl p-4">
-          <label className="text-blue-700 font-sans text-xl mb-2">
-            First Name
-          </label>
-          <hr className="w-96" />
-          <label className="text-blue-700 font-sans text-xl mb-2">
-            Last Name
-          </label>
-          <hr className="w-96" />
-          <label className="text-blue-700 font-sans text-xl mb-2">
-            Email ID
-          </label>
-          <hr className="w-96" />
-          <label className="text-blue-700 font-sans text-xl mb-2">
-            Create Password
-          </label>
-          <hr className="w-96" />
-          <label className="text-blue-700 font-sans text-xl mb-2">
-            Confirm Password
-          </label>
-          <hr className="w-96" />
+          <div className="flex justify-between my-4">
+            <label className="text-blue-700 font-sans text-xl mb-2">
+              First Name
+            </label>
+            <input
+              type="text"
+              className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
+            />
+          </div>
+          <div className="flex justify-between my-4">
+            <label className="text-blue-700 font-sans text-xl mb-2">
+              Last Name
+            </label>
+            <input
+              type="text"
+              className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
+            />
+          </div>
+          <div className="flex justify-between my-4">
+            <label className="text-blue-700 font-sans text-xl mb-2">
+              Email ID
+            </label>
+            <input
+              type="text"
+              className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
+            />
+          </div>
+          <div className="flex justify-between my-4">
+            <label className="text-blue-700 font-sans text-xl mb-2">
+              Create Password
+            </label>
+            <input
+              type="text"
+              className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
+            />
+          </div>
+          <div className="flex justify-between my-4">
+            <label className="text-blue-700 font-sans text-xl mb-2">
+              Confirm Password
+            </label>
+            <input
+              type="text"
+              className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
+            />
+          </div>
           <label className="text-blue-700 font-sans text-xl mb-2">
             How many users you have ?
           </label>
@@ -58,11 +83,14 @@ function RightSignUp() {
               </label>
             </div>
           </div>
-          <div>
+          <div className="flex justify-between my-4">
             <label className="text-blue-700 font-sans text-xl mb-2">
               Create Password
             </label>
-            <hr className="w-96" />
+            <input
+              type="text"
+              className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
+            />
           </div>
         </div>
         <div className="pb-3 flex flex-col justify-center items-center">

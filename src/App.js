@@ -40,7 +40,7 @@ function App() {
       {/* <HomeToolsBar></HomeToolsBar> */}
       {/* <HomeSampleTool></HomeSampleTool> */}
       {/* <HomeCustName></HomeCustName> */}
-      <HomeSec5></HomeSec5>
+      {/* <HomeSec5></HomeSec5> */}
       {/* <Footer></Footer> */}
       {/* <FooterSocial></FooterSocial> */}
       {/* <Test></Test> */}

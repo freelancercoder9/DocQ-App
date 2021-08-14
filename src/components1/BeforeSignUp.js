@@ -4,12 +4,12 @@ import "../style.css";
 
 function BeforeSignUp() {
   return (
-    <div className="grid grid-cols-3 BeforeSignUp-main">
+    <div className="grid grid-cols-3 BeforeSignUp-main h-full">
       <div className="col-span-1 flex justify-center items-center LeftSignup">
         <LeftSignup></LeftSignup>
       </div>
       <div className="col-span-2 flex flex-col justify-center items-center">
-        <div className="text-center font-sans text-4xl text-pink-900 p-3">
+        <div className="text-center font-sans text-4xl text-pink-900 absolute top-0 mt-5">
           Sign Up for a New Account
         </div>
         <div className="bg-white flex flex-col justify-around items-center w-11/12">
@@ -44,7 +44,7 @@ function BeforeSignUp() {
             </button>
           </div>
         </div>
-        <div className="text-center text-blue-700 p-3 ">
+        <div className="text-center text-blue-700 absolute bottom-0 mb-3 ">
           <label htmlFor=""> ← Back to Home</label>
         </div>
       </div>
