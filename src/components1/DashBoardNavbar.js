@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import CustName from "../Icons/CustName.svg";
 import "../style.css";
 
-function DashBoardNavbar() {
+function DashBoardNavbar(props) {
   return (
     <nav className="flex justify-between DashBoardNavbar-main">
-      <div className="text-2xl text-blue-900 font-semibold p-2 ml-4 ">
+      <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">
         DocTrin
       </div>
       <div className="flex justify-between items-center font-sans  ">
@@ -29,7 +29,7 @@ function DashBoardNavbar() {
       <div className="flex items-center">
         <div className="text-lg text-blue-600">User</div>
         <div className=" h-full mx-3">
-          <img src={CustName} className=" h-full" />
+          <img src={CustName} className=" h-full p-1" />
         </div>
       </div>
     </nav>
