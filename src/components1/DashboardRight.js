@@ -6,7 +6,7 @@ import DeniedUser from "../Icons/DeniedUser.svg";
 function DashboardRight() {
   return (
     <div>
-      <div className="w-1/5 border border-black">
+      <div className="border border-black bg-white">
         <div className="flex justify-center items-center">
           <label className="mt-2 text-lg">Files Status</label>
         </div>
@@ -16,7 +16,7 @@ function DashboardRight() {
             <img src={ApprovedUserfiles} className="h-full mr-2" />
             <div className="text-lg font-sans">Approved</div>
           </div>
-          <div className="h-6 w-14 bg-green-500 text-center text-white">
+          <div className="h-6 w-14 bg-green-500 text-center text-white ml-2">
             258
           </div>
         </div>
@@ -25,7 +25,7 @@ function DashboardRight() {
             <img src={PendingUser} className="h-full mr-2" />
             <div className="text-lg font-sans">Pending</div>
           </div>
-          <div className="h-6 w-14 bg-purple-500 text-center text-white">
+          <div className="h-6 w-14 bg-purple-500 text-center text-white ml-2">
             258
           </div>
         </div>
@@ -34,7 +34,9 @@ function DashboardRight() {
             <img src={DeniedUser} className="h-full mr-2" />
             <div className="text-lg font-sans">Denied</div>
           </div>
-          <div className="h-6 w-14 bg-red-500 text-center text-white">258</div>
+          <div className="h-6 w-14 bg-red-500 text-center text-white ml-2">
+            258
+          </div>
         </div>
       </div>
     </div>

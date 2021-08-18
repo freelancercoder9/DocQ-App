@@ -3,7 +3,7 @@ import "../style.css";
 
 function FilesComp() {
   return (
-    <div className="flex justify-between w-7/12">
+    <div className="flex justify-between items-center">
       <div className=" FilesComp border border-black w-1/5 p-2 text-center">
         <button>All Files</button>
       </div>

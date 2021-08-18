@@ -41,6 +41,7 @@ import RejectedFiles from "./components1/RejectedFiles";
 import PendingFiles from "./components1/PendingFiles";
 import RejectedFilesScreen from "./screens/RejectedFilesScreen";
 import DashboardScreen from "./screens/DashboardScreen";
+import HomePage from "./screens/HomePage";
 
 function App() {
   return (
@@ -86,7 +87,8 @@ function App() {
       {/* <ManageUsersScreen></ManageUsersScreen> */}
       {/* <GroupFilesScreen></GroupFilesScreen> */}
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
-      <DashboardScreen></DashboardScreen>
+      {/* <DashboardScreen></DashboardScreen> */}
+      <HomePage></HomePage>
     </div>
   );
 }
