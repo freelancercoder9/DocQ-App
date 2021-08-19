@@ -4,18 +4,18 @@ import "../style.css";
 function FilesComp() {
   return (
     <div className="flex justify-between items-center">
-      <div className=" FilesComp border border-black w-1/5 p-2 text-center">
-        <button>All Files</button>
-      </div>
-      <div className=" FilesComp border border-black w-1/5 p-2 text-center">
-        <button>Approved Files</button>
-      </div>
-      <div className=" FilesComp border border-black w-1/5 p-2 text-center">
-        <button>Pending Files</button>
-      </div>
-      <div className=" FilesComp border border-black w-1/5 p-2 text-center">
-        <button>Rejected Files</button>
-      </div>
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center">
+        All Files
+      </button>
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center">
+        Approved Files
+      </button>
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center">
+        Pending Files
+      </button>
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center">
+        Rejected Files
+      </button>
     </div>
   );
 }

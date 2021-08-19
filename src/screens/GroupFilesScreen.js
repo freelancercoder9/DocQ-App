@@ -6,14 +6,18 @@ import GrpFilesRight from "../components1/GrpFilesRight";
 
 function GroupFilesScreen() {
   return (
-    <div>
+    <div className="bg-red-300">
       <div>
         <DashBoardNavbar></DashBoardNavbar>
         <DocumentsBar></DocumentsBar>
       </div>
-      <div className="flex justify-between">
-        <FilesComp></FilesComp>
-        <GrpFilesRight></GrpFilesRight>
+      <div className="flex justify-around mt-3 h-full">
+        <div className="w-5/12">
+          <FilesComp></FilesComp>
+        </div>
+        <div className="w-5/12">
+          <GrpFilesRight></GrpFilesRight>
+        </div>
       </div>
     </div>
   );

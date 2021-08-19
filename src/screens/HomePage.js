@@ -10,6 +10,10 @@ import Footer from "../components/Footer";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import HomeUpload from "../components/HomeUpload";
 import Sec1Img from "../Icons/Sec1Img.svg";
+import HomeSecure from "../components/HomeSecure";
+import HomeInteract from "../components/HomeInteract";
+import HomeSec5Scan from "../components/HomeSec5Scan";
+import HomeSec5Free from "../components/HomeSec5Free";
 
 function HomePage() {
   return (
@@ -17,21 +21,18 @@ function HomePage() {
       <div>
         <Navbar></Navbar>
       </div>
-      <div className="flex justify-around my-10">
-        <div className="flex items-center bg-yellow-300">
-          <div>
-            <HomeUpload></HomeUpload>
-          </div>
-          <div className="mx-5">
-            <HomeUpload></HomeUpload>
-          </div>
-          <div>
-            <HomeUpload></HomeUpload>
-          </div>
+      <div className="flex justify-between my-10">
+        <div className="flex justify-around items-center w-6/12 bg-gradient-to-b from-blue-400 via-blue-600 to-gray-300 rounded-md">
+          <HomeUpload></HomeUpload>
+          <HomeSecure></HomeSecure>
+          <HomeInteract></HomeInteract>
+          <HomeUpload></HomeUpload>
         </div>
-        <div className="bg-pink-200">
+        <div className="w-1/12"></div>
+        <div className="w-3/12">
           <img src={Sec1Img} className="" />
         </div>
+        <div className="w-2/12"></div>
       </div>
       <div className="mt-3 flex justify-center items-center ">
         <label className="text-xl font-sans mr-16">
@@ -76,8 +77,8 @@ function HomePage() {
       </div>
       <div className="flex justify-around items-center">
         <HomeSec5></HomeSec5>
-        <HomeSec5></HomeSec5>
-        <HomeSec5></HomeSec5>
+        <HomeSec5Scan></HomeSec5Scan>
+        <HomeSec5Free></HomeSec5Free>
       </div>
       <div className="mt-7">
         <Footer></Footer>

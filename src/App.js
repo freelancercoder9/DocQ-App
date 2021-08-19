@@ -42,18 +42,26 @@ import PendingFiles from "./components1/PendingFiles";
 import RejectedFilesScreen from "./screens/RejectedFilesScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import HomePage from "./screens/HomePage";
+import HomeSecure from "./components/HomeSecure";
+import HomeInteract from "./components/HomeInteract";
+import HomeSec5Scan from "./components/HomeSec5Scan";
+import HomeSec5Free from "./components/HomeSec5Free";
 
 function App() {
   return (
-    <div className="h-full">
+    <div className="h-full bg-green-500">
       {/* <Navbar></Navbar> */}
       {/* <HomeUpload></HomeUpload> */}
+      {/* <HomeSecure></HomeSecure> */}
+      {/* <HomeInteract></HomeInteract> */}
       {/* <HomeUploading></HomeUploading> */}
       {/* <HomeSec2></HomeSec2> */}
       {/* <HomeToolsBar></HomeToolsBar> */}
       {/* <HomeSampleTool></HomeSampleTool> */}
       {/* <HomeCustName></HomeCustName> */}
       {/* <HomeSec5></HomeSec5> */}
+      {/* <HomeSec5Scan></HomeSec5Scan> */}
+      {/* <HomeSec5Free></HomeSec5Free> */}
       {/* <Footer></Footer> */}
       {/* <FooterSocial></FooterSocial> */}
       {/* <Test></Test> */}
@@ -85,10 +93,10 @@ function App() {
       {/* <NewJoineeList></NewJoineeList> */}
       {/* <NewJoinee></NewJoinee> */}
       {/* <ManageUsersScreen></ManageUsersScreen> */}
-      {/* <GroupFilesScreen></GroupFilesScreen> */}
+      <GroupFilesScreen></GroupFilesScreen>
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
       {/* <DashboardScreen></DashboardScreen> */}
-      <HomePage></HomePage>
+      {/* <HomePage></HomePage> */}
     </div>
   );
 }
