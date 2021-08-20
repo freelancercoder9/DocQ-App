@@ -2,17 +2,17 @@ import React from "react";
 
 function GrpFilesRight() {
   return (
-    <div className="  bg-gray-300">
+    <div className="">
       <div className="h-full">
-        <div className=" h-12  border-2 border-gray-500 rounded-sm  flex justify-center items-center mb-3 ">
-          <div className="border-r-2 border-gray-500 pr-5">
+        <div className=" h-12  border-2  rounded-sm  flex justify-center items-center mb-3 ">
+          <div className="border-r-2  pr-5">
             <label className="text-lg ">File Name</label>
           </div>
           <div className="pl-5">
             <label className="text-lg">From user</label>
           </div>
         </div>
-        <div className=" border-2 border-gray-500"></div>
+        <div className="flex flex-1 flex-col border-2 "></div>
 
         <div
           className=" flex justify-between items-center my-4"

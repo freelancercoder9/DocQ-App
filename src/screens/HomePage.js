@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import HomeUploading from "../components/HomeUploading";
 import HomeSec2 from "../components/HomeSec2";
 import HomeSec5 from "../components/HomeSec5";
@@ -16,6 +16,7 @@ import HomeSec5Scan from "../components/HomeSec5Scan";
 import HomeSec5Free from "../components/HomeSec5Free";
 
 function HomePage() {
+  const custName = [1, 2, 3, 4, 5, 6];
   return (
     <div>
       <div>
@@ -69,12 +70,23 @@ function HomePage() {
         </label>
       </div>
 
-      <div className="grid grid-flow-row grid-cols-4 gap-4 p-5 my-3">
+      {/* <div className="grid grid-flow-row grid-cols-4 gap-4 p-5 my-3">
         <HomeCustName></HomeCustName>
         <HomeCustName></HomeCustName>
         <HomeCustName></HomeCustName>
         <HomeCustName></HomeCustName>
+      </div> */}
+
+      <div>
+        <ScrollMenu
+          arrowLeft={<div style={{ fontSize: "30px" }}>{" < "}</div>}
+          arrowRight={<div style={{ fontSize: "30px" }}>{" > "}</div>}
+          data={custName.map((item, index) => {
+            return <HomeCustName></HomeCustName>;
+          })}
+        ></ScrollMenu>
       </div>
+
       <div className="flex justify-around items-center">
         <HomeSec5></HomeSec5>
         <HomeSec5Scan></HomeSec5Scan>

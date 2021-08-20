@@ -49,7 +49,7 @@ import HomeSec5Free from "./components/HomeSec5Free";
 
 function App() {
   return (
-    <div className="h-full bg-green-500">
+    <div className="h-full">
       {/* <Navbar></Navbar> */}
       {/* <HomeUpload></HomeUpload> */}
       {/* <HomeSecure></HomeSecure> */}
@@ -86,14 +86,14 @@ function App() {
       {/* <ManageUsers></ManageUsers> */}
       {/* <UserSettings></UserSettings> */}
       {/* <ManageUsersHeading></ManageUsersHeading> */}
-      {/* <GrpFilesRight></GrpFilesRight> */}
+      <GrpFilesRight></GrpFilesRight>
       {/* <ManageUserList></ManageUserList> */}
       {/* <NewJoineeSearch></NewJoineeSearch> */}
       {/* <NewJoineeHeading></NewJoineeHeading> */}
       {/* <NewJoineeList></NewJoineeList> */}
       {/* <NewJoinee></NewJoinee> */}
       {/* <ManageUsersScreen></ManageUsersScreen> */}
-      <GroupFilesScreen></GroupFilesScreen>
+      {/* <GroupFilesScreen></GroupFilesScreen> */}
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
       {/* <DashboardScreen></DashboardScreen> */}
       {/* <HomePage></HomePage> */}
