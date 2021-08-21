@@ -6,7 +6,6 @@ import Navbar from "../components1/Navbar";
 import HomeToolsBar from "../components/HomeToolsBar";
 import HomeSampleTool from "../components/HomeSampleTool";
 import HomeCustName from "../components/HomeCustName";
-import Footer from "../components/Footer";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import HomeUpload from "../components/HomeUpload";
 import Sec1Img from "../Icons/Sec1Img.svg";
@@ -14,9 +13,10 @@ import HomeSecure from "../components/HomeSecure";
 import HomeInteract from "../components/HomeInteract";
 import HomeSec5Scan from "../components/HomeSec5Scan";
 import HomeSec5Free from "../components/HomeSec5Free";
+import Footer from "../components/Footer";
 
 function HomePage() {
-  const custName = [1, 2, 3, 4, 5, 6];
+  var custName = [1, 2, 3, 4, 5, 6];
   return (
     <div>
       <div>
@@ -70,14 +70,14 @@ function HomePage() {
         </label>
       </div>
 
-      {/* <div className="grid grid-flow-row grid-cols-4 gap-4 p-5 my-3">
+      <div className="grid grid-flow-row grid-cols-4 gap-4 p-5 my-3">
         <HomeCustName></HomeCustName>
         <HomeCustName></HomeCustName>
         <HomeCustName></HomeCustName>
         <HomeCustName></HomeCustName>
-      </div> */}
+      </div>
 
-      <div>
+      {/* <div>
         <ScrollMenu
           arrowLeft={<div style={{ fontSize: "30px" }}>{" < "}</div>}
           arrowRight={<div style={{ fontSize: "30px" }}>{" > "}</div>}
@@ -85,7 +85,7 @@ function HomePage() {
             return <HomeCustName></HomeCustName>;
           })}
         ></ScrollMenu>
-      </div>
+      </div> */}
 
       <div className="flex justify-around items-center">
         <HomeSec5></HomeSec5>

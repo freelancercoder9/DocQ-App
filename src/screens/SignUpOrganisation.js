@@ -1,5 +1,5 @@
 import React from "react";
-import LeftSignup from "./LeftSignup";
+import LeftSignup from "../components1/LeftSignup";
 import "../style.css";
 
 function SignUpOrganisation() {
