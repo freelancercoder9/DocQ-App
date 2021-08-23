@@ -1,6 +1,7 @@
 import React from "react";
 import "../style.css";
 import DashboardLeft from "../Icons/DashboardLeft.svg";
+import { NavLink } from "react-router-dom";
 
 function DashboardLeftPane() {
   return (
@@ -13,12 +14,20 @@ function DashboardLeftPane() {
           <img src={DashboardLeft} />
         </div>
         <div className="text-3xl font-sans my-4">Organisation</div>
-        <div className=" DashboardLeftPane-btn text-base font-semibold  rounded-xl w-44 p-2 mt-4 text-center">
+
+        <NavLink
+          className=" DashboardLeftPane-btn text-base font-semibold  rounded-xl w-44 p-2 mt-4 text-center no-underline text-black"
+          to="/newJoinee"
+        >
           New Join Request
-        </div>
-        <div className=" DashboardLeftPane-btn text-base font-semibold  rounded-xl w-44 p-2 mt-3 text-center">
+        </NavLink>
+
+        <NavLink
+          className=" DashboardLeftPane-btn text-base font-semibold  rounded-xl w-44 p-2 mt-3 text-center no-underline text-black"
+          to="/users"
+        >
           Manage Users
-        </div>
+        </NavLink>
         <div className="w-96 my-4 text-center rounded-xl text-white text-lg font-semibold p-2 bg-purple-600">
           Upgrade Plan
         </div>

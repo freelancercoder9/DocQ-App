@@ -21,8 +21,8 @@ function NewJoineeList() {
           <img src={editBlue} />
         </div>
         <div className=" w-1/6 flex items-center justify-evenly">
-          <img src={greenTick} />
-          <img src={redCross} />
+          <img src={greenTick} className="cursor-pointer" />
+          <img src={redCross} className="cursor-pointer" />
         </div>
       </div>
     </div>

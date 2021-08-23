@@ -18,12 +18,17 @@ function UploadFiles() {
         </div>
         <div className=" uploadFiles w-4/12 border-black border flex flex-col justify-around">
           <div className=" flex flex-col justify-center items-center">
-            <div className="w-8/12 bg-yellow-100 rounded-sm text-center text-lg mb-4 p-3">
-              FileName
-            </div>
-            <div className="w-8/12 bg-yellow-100  rounded-sm text-center text-lg p-3">
-              Username
-            </div>
+            <input
+              type="text"
+              className="w-8/12 bg-yellow-100 rounded-sm text-center text-lg mb-4 p-3"
+              placeholder="FileName"
+            />
+
+            <input
+              type="text"
+              className="w-8/12 bg-yellow-100 rounded-sm text-center text-lg mb-4 p-3"
+              placeholder="UserId"
+            />
           </div>
           <div className="flex justify-center items-center">
             <button className="w-2/12 p-2 bg-purple-500 text-white ">

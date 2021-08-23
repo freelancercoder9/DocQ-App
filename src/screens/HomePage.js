@@ -6,7 +6,7 @@ import Navbar from "../components1/Navbar";
 import HomeToolsBar from "../components/HomeToolsBar";
 import HomeSampleTool from "../components/HomeSampleTool";
 import HomeCustName from "../components/HomeCustName";
-import ScrollMenu from "react-horizontal-scrolling-menu";
+import Carousel from "react-elastic-carousel";
 import HomeUpload from "../components/HomeUpload";
 import Sec1Img from "../Icons/Sec1Img.svg";
 import HomeSecure from "../components/HomeSecure";
@@ -17,6 +17,15 @@ import Footer from "../components/Footer";
 
 function HomePage() {
   var custName = [1, 2, 3, 4, 5, 6];
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+    { width: 850, itemsToShow: 3 },
+    { width: 1150, itemsToShow: 3, itemsToScroll: 2 },
+    { width: 1450, itemsToShow: 4 },
+    { width: 1750, itemsToShow: 5 },
+  ];
+
   return (
     <div>
       <div>
@@ -70,22 +79,11 @@ function HomePage() {
         </label>
       </div>
 
-      <div className="grid grid-flow-row grid-cols-4 gap-4 p-5 my-3">
-        <HomeCustName></HomeCustName>
-        <HomeCustName></HomeCustName>
-        <HomeCustName></HomeCustName>
-        <HomeCustName></HomeCustName>
-      </div>
-
-      {/* <div>
-        <ScrollMenu
-          arrowLeft={<div style={{ fontSize: "30px" }}>{" < "}</div>}
-          arrowRight={<div style={{ fontSize: "30px" }}>{" > "}</div>}
-          data={custName.map((item, index) => {
-            return <HomeCustName></HomeCustName>;
-          })}
-        ></ScrollMenu>
-      </div> */}
+      <Carousel breakPoints={breakPoints} className="px-5 mt-5">
+        {custName.map((item) => (
+          <HomeCustName key={item}></HomeCustName>
+        ))}
+      </Carousel>
 
       <div className="flex justify-around items-center">
         <HomeSec5></HomeSec5>

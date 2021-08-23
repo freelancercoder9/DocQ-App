@@ -22,6 +22,40 @@ function App() {
           <Route path="/" component={HomePage} exact={true}></Route>
           <Route path="/signin" component={SignIn} exact={true}></Route>
           <Route path="/signup" component={BeforeSignUp} exact={true}></Route>
+          <Route
+            path="/dashboardScreen"
+            component={DashboardScreen}
+            exact={true}
+          ></Route>
+          <Route
+            path="/signUpIndividual"
+            component={SignUpIndividual}
+            exact={true}
+          ></Route>
+          <Route
+            path="/dashboardScreen"
+            component={DashboardScreen}
+            exact={true}
+          ></Route>
+          <Route path="/forgotPwd" component={ForgotPwd} exact={true}></Route>
+          <Route path="/homePage" component={HomePage} exact={true}></Route>
+          <Route
+            path="/dashboardScreen"
+            component={DashboardScreen}
+            exact={true}
+          ></Route>
+          <Route
+            path="/documents"
+            component={GroupFilesScreen}
+            exact={true}
+          ></Route>
+          <Route path="/upload" component={UploadFiles} exact={true}></Route>
+          <Route
+            path="/users"
+            component={ManageUsersScreen}
+            exact={true}
+          ></Route>
+          <Route path="/newJoinee" component={NewJoinee} exact={true}></Route>
         </Switch>
       </Router>
       {/* <BeforeSignUp></BeforeSignUp> */}

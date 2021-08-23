@@ -1,6 +1,7 @@
 import React from "react";
 import LeftSignup from "../components1/LeftSignup";
 import "../style.css";
+import { NavLink } from "react-router-dom";
 
 function SignUpOrganisation() {
   return (
@@ -71,7 +72,12 @@ function SignUpOrganisation() {
           </div>
         </div>
         <div className="text-center text-blue-700 p-3 absolute bottom-0 mb-3">
-          <label htmlFor=""> ← Back to Home</label>
+          <NavLink
+            className="text-blue-700 font-sans text-xl mb-2 no-underline"
+            to="/homePage"
+          >
+            ← Back to Home
+          </NavLink>
         </div>
       </div>
     </div>

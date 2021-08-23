@@ -2,29 +2,49 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CustName from "../Icons/CustName.svg";
 import "../style.css";
+import { NavLink } from "react-router-dom";
 
-function DashBoardNavbar(props) {
+function DashBoardNavbar() {
   return (
     <nav className="flex justify-between DashBoardNavbar-main">
       <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">
         DocTrin
       </div>
       <div className="flex justify-between items-center font-sans  ">
-        <Link className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white">
+        <NavLink
+          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          to="/dashboardScreen"
+        >
           Dashboard
-        </Link>
-        <Link className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white">
+        </NavLink>
+
+        <NavLink
+          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          to="/documents"
+        >
           Documents
-        </Link>
-        <Link className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white">
+        </NavLink>
+
+        <NavLink
+          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          to="/upload"
+        >
           Upload
-        </Link>
-        <Link className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white">
+        </NavLink>
+
+        <NavLink
+          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          to="/users"
+        >
           Users
-        </Link>
-        <Link className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white">
-          New Joins
-        </Link>
+        </NavLink>
+
+        <NavLink
+          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          to="/newJoinee"
+        >
+          New Joinees
+        </NavLink>
       </div>
       <div className="flex items-center">
         <div className="text-lg text-blue-600">User</div>

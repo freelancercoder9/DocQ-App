@@ -1,5 +1,6 @@
 import React from "react";
 import LeftSignup from "../components1/LeftSignup";
+import { NavLink } from "react-router-dom";
 
 function SignUpIndividual() {
   return (
@@ -60,13 +61,24 @@ function SignUpIndividual() {
             </div>
           </div>
           <div className="pb-3 flex justify-center items-center">
-            <button className=" BeforeSignUp-button  px-4 py-1  text-white">
+            {/* <button className=" BeforeSignUp-button  px-4 py-1  text-white">
               Create Account
-            </button>
+            </button> */}
+            <NavLink
+              className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
+              to="/dashboardScreen"
+            >
+              Create Account
+            </NavLink>
           </div>
         </div>
         <div className="text-center text-blue-700 absolute bottom-0 mb-3 ">
-          <label htmlFor=""> ← Back to Home</label>
+          <NavLink
+            className="text-blue-700 font-sans text-xl mb-2 no-underline"
+            to="/homePage"
+          >
+            ← Back to Home
+          </NavLink>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import LeftSignup from "../components1/LeftSignup";
 import "../style.css";
+import { NavLink } from "react-router-dom";
 
 function BeforeSignUp() {
   return (
@@ -39,13 +40,21 @@ function BeforeSignUp() {
             Already having account ? Sign In
           </div>
           <div className="p-4">
-            <button className=" BeforeSignUp-button  px-4 py-2  text-white">
+            <NavLink
+              className=" BeforeSignUp-button  px-4 py-2  text-white no-underline text-center"
+              to="/signUpIndividual"
+            >
               Next
-            </button>
+            </NavLink>
           </div>
         </div>
         <div className="text-center text-blue-700 absolute bottom-0 mb-3 ">
-          <label htmlFor=""> ← Back to Home</label>
+          <NavLink
+            className="text-blue-700 font-sans text-xl mb-2 no-underline"
+            to="/homePage"
+          >
+            ← Back to Home
+          </NavLink>
         </div>
       </div>
     </div>
