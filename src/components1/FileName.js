@@ -5,7 +5,7 @@ import morevertical from "../Icons/morevertical.svg";
 
 function FileName() {
   return (
-    <div className=" FileName flex border border-black w-1/5 justify-between p-2">
+    <div className=" FileName flex border border-black w-60 justify-between p-2 mx-2 my-3">
       <div className="h-full">
         <img src={Allfiles} className="h-14" />
       </div>

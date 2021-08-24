@@ -14,14 +14,11 @@ function GrpFilesRight() {
       <div className="flex flex-1 flex-col border-2 "></div>
 
       <div className="flex justify-between items-center my-4">
-        <button className="text-white text-xl bg-blue-600  py-1 px-5 rounded-sm">
+        <button className="text-white text-xl bg-blue-600  py-1 px-5 rounded-md">
           Approve
         </button>
-        <button className="text-white text-xl bg-red-600 py-1 px-5 rounded-sm">
+        <button className="text-white text-xl bg-red-600 py-1 px-5 rounded-md">
           Reject
-        </button>
-        <button className="text-blue-900 text-xl bg-pink-300 py-1 px-4 rounded-sm">
-          Exit Preview
         </button>
       </div>
     </div>
