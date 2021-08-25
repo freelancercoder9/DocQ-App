@@ -61,9 +61,6 @@ function SignUpIndividual() {
             </div>
           </div>
           <div className="pb-3 flex justify-center items-center">
-            {/* <button className=" BeforeSignUp-button  px-4 py-1  text-white">
-              Create Account
-            </button> */}
             <NavLink
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
               to="/dashboardScreen"

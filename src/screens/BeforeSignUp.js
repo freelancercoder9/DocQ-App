@@ -21,6 +21,7 @@ function BeforeSignUp() {
                 type="radio"
                 id="individual"
                 value="Individual"
+                name="signUp-Type"
                 className="mr-3 mb-3"
               />
               <label htmlFor="individual">Individual</label>
@@ -30,6 +31,7 @@ function BeforeSignUp() {
                 type="radio"
                 id="organisation"
                 value="Organisation"
+                name="signUp-Type"
                 className="mr-3"
               />
               <label htmlFor="organisation">Organisation</label>

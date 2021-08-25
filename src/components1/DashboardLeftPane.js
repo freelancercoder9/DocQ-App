@@ -11,7 +11,7 @@ function DashboardLeftPane() {
       </div>
       <div className="flex flex-col items-center bg-white">
         <div className="my-3 mx-3">
-          <img src={DashboardLeft} />
+          <img src={DashboardLeft} alt={DashboardLeft} />
         </div>
         <div className="text-3xl font-sans my-4">Organisation</div>
 

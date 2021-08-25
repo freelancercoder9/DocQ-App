@@ -6,7 +6,7 @@ function RejectedFiles() {
   return (
     <div className=" FileName flex border border-black w-1/5 justify-between p-2">
       <div className="h-full">
-        <img src={Rejectedfiles} className="h-14" />
+        <img src={Rejectedfiles} className="h-14" alt={Rejectedfiles} />
       </div>
       <div>
         <div>
@@ -17,7 +17,7 @@ function RejectedFiles() {
         </div>
       </div>
       <div>
-        <img src={morevertical} />
+        <img src={morevertical} alt={morevertical} />
       </div>
     </div>
   );

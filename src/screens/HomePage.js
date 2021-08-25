@@ -40,7 +40,7 @@ function HomePage() {
         </div>
         <div className="w-1/12"></div>
         <div className="w-3/12">
-          <img src={Sec1Img} className="" />
+          <img src={Sec1Img} alt={Sec1Img} />
         </div>
         <div className="w-2/12"></div>
       </div>

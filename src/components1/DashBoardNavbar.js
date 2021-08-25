@@ -49,7 +49,7 @@ function DashBoardNavbar() {
       <div className="flex items-center">
         <div className="text-lg text-blue-600">User</div>
         <div className=" h-full mx-3">
-          <img src={CustName} className=" h-full p-1" />
+          <img src={CustName} className=" h-full p-1" alt={CustName} />
         </div>
       </div>
     </nav>

@@ -18,11 +18,11 @@ function NewJoineeList() {
         </div>
         <div className="border-r-2 border-gray-300 w-1/6 flex items-center justify-evenly ">
           <label className=" text-lg mr-6">default</label>
-          <img src={editBlue} />
+          <img src={editBlue} alt={editBlue} />
         </div>
         <div className=" w-1/6 flex items-center justify-evenly">
-          <img src={greenTick} className="cursor-pointer" />
-          <img src={redCross} className="cursor-pointer" />
+          <img src={greenTick} className="cursor-pointer" alt={greenTick} />
+          <img src={redCross} className="cursor-pointer" alt={redCross} />
         </div>
       </div>
     </div>

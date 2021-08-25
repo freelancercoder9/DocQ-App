@@ -11,7 +11,7 @@ function SignIn() {
           <label className="text-3xl text-blue-900 font-sans font-semibold">
             Doctrin
           </label>
-          <img src={Vector} />
+          <img src={Vector} alt={Vector} />
           <label className="text-lg text-blue-900 px-5 text-center">
             Explore the amazing Environment
           </label>

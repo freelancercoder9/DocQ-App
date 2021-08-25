@@ -11,7 +11,7 @@ function UploadFiles() {
       </div>
       <div className="flex justify-evenly  items-center mt-5">
         <div className=" uploadFiles w-6/12 border-black border ml-7 flex justify-evenly items-center bg-gray-100">
-          <img src={dragdrop} />
+          <img src={dragdrop} alt={dragdrop} />
           <label className="text-3xl text-red-900">
             Drag and Drop your Files here
           </label>

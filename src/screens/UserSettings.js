@@ -13,19 +13,19 @@ function UserSettings() {
           </label>
         </div>
         <div className="">
-          <img src={closeOutline} />
+          <img src={closeOutline} alt={closeOutline} />
         </div>
       </div>
       <hr className="mt-0" />
       <div className="flex justify-evenly">
         <label className="text-lg">User Status</label>
-        <img src={morevertical} />
+        <img src={morevertical} alt={morevertical} />
         <label className="text-lg text-purple-600">Active</label>
         <img src={editicon} />
       </div>
       <div className="flex justify-evenly">
         <label className="text-lg ml-16">Role</label>
-        <img src={morevertical} />
+        <img src={morevertical} alt={morevertical} />
         <label className="text-lg text-purple-600">Default</label>
         <img src={editicon} />
       </div>

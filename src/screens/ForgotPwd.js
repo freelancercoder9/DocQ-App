@@ -5,7 +5,7 @@ function ForgotPwd() {
   return (
     <div>
       <nav className="flex items-center">
-        <img src={BackArrow} className=" mx-3" />
+        <img src={BackArrow} className=" mx-3" alt={BackArrow} />
         <label className="text-2xl"> Forgot Password</label>
       </nav>
       <div className="flex justify-center mt-20">

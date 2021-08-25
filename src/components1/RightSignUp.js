@@ -77,7 +77,7 @@ function RightSignUp() {
               Document verification
             </label>
             <div className="flex  justify-around p-1 bg-gray-200 w-28">
-              <img src={VectorSignUp} />
+              <img src={VectorSignUp} alt={VectorSignUp} />
               <label className="SignUp-upload text-gray-700 text-lg">
                 upload
               </label>

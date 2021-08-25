@@ -13,7 +13,11 @@ function DashboardRight() {
         <hr />
         <div className="flex justify-between px-4 my-3">
           <div className="h-full flex ">
-            <img src={ApprovedUserfiles} className="h-full mr-2" />
+            <img
+              src={ApprovedUserfiles}
+              className="h-full mr-2"
+              alt={ApprovedUserfiles}
+            />
             <div className="text-lg font-sans">Approved</div>
           </div>
           <div className="h-6 w-14 bg-green-500 text-center text-white ml-2">
@@ -22,7 +26,7 @@ function DashboardRight() {
         </div>
         <div className="flex justify-between px-4 my-3">
           <div className="h-full flex ">
-            <img src={PendingUser} className="h-full mr-2" />
+            <img src={PendingUser} className="h-full mr-2" alt={PendingUser} />
             <div className="text-lg font-sans">Pending</div>
           </div>
           <div className="h-6 w-14 bg-purple-500 text-center text-white ml-2">
@@ -31,7 +35,7 @@ function DashboardRight() {
         </div>
         <div className="flex justify-between px-4 my-3">
           <div className="h-full flex ">
-            <img src={DeniedUser} className="h-full mr-2" />
+            <img src={DeniedUser} className="h-full mr-2" alt={DeniedUser} />
             <div className="text-lg font-sans">Denied</div>
           </div>
           <div className="h-6 w-14 bg-red-500 text-center text-white ml-2">
