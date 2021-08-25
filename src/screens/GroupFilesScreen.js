@@ -23,6 +23,7 @@ function GroupFilesScreen() {
             {docListData.map((item) => {
               return (
                 <FileName
+                  fileIconStatus={item.fileStatus}
                   fileName={item.docName}
                   userName={item.userName}
                 ></FileName>
