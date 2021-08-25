@@ -18,3 +18,13 @@ export const getRejectedFiles = () => {
     type: "REJECTED_FILES",
   };
 };
+export const setIndividual = () => {
+  return {
+    type: "SET_INDIVIDUAL",
+  };
+};
+export const setOrganistion = () => {
+  return {
+    type: "SET_ORGANISATION",
+  };
+};
