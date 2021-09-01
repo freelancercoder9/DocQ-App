@@ -1,18 +1,9 @@
 import React from "react";
 import LeftSignup from "../components1/LeftSignup";
-import "../style.css";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getCountry,
-  getMobileNo,
-  getOrgName,
-  getUserName,
-  getEmailId,
-} from "../actions";
+import VectorSignUp from "../Icons/VectorSignUp.svg";
 
-function SignUpOrganisation() {
-  const dispatch = useDispatch();
+function SignUpOrg2() {
   return (
     <div className="grid grid-cols-3  BeforeSignUp-main h-full">
       <div className="col-span-1 flex justify-center items-center LeftSignup">
@@ -26,75 +17,77 @@ function SignUpOrganisation() {
           <div className="font-sans text-3xl p-4">
             <div className="flex justify-between my-4">
               <label className="text-blue-700 font-sans text-xl mb-2 w-5/12">
-                Organisation Name
+                State
               </label>
               <input
                 type="text"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
-                onChange={(e) => {
-                  dispatch(getOrgName(e.target.value));
-                }}
               />
             </div>
 
             <div className="flex justify-between my-4">
               <label className="text-blue-700 font-sans text-xl mb-2">
-                UserName(Your Name)
+                City
               </label>
               <input
                 type="text"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
-                onChange={(e) => {
-                  dispatch(getUserName(e.target.value));
-                }}
               />
             </div>
 
-            <div className="flex justify-between my-4">
+            <div className="flex justify-between my-2">
               <label className="text-blue-700 font-sans text-xl mb-2">
-                Email ID
+                How many users you have ?
               </label>
-              <input
-                type="text"
-                className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
-                onChange={(e) => {
-                  dispatch(getEmailId(e.target.value));
-                }}
-              />
             </div>
-
-            <div className="flex justify-between my-4">
-              <label className="text-blue-700 font-sans text-xl mb-2">
-                Mobile Number
+            <div>
+              <input type="radio" id=">10" value=">10" className="mr-2" />
+              <label htmlFor=">10" className="text-xl mr-2">
+                {">"}10
               </label>
-              <input
-                type="text"
-                className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
-                onChange={(e) => {
-                  dispatch(getMobileNo(e.target.value));
-                }}
-              />
+              <input type="radio" id=">50" value=">50" className="mr-2" />
+              <label htmlFor=">50" className="text-xl mr-2">
+                {">"}50
+              </label>
+              <input type="radio" id=">100" value=">100" className="mr-2" />
+              <label htmlFor=">100" className="text-xl mr-2">
+                {">"}100
+              </label>
+              <input type="radio" id="<100" value="<100" className="mr-2" />
+              <label htmlFor="<100" className="text-xl mr-2">
+                {"<"}100
+              </label>
             </div>
-
+            <div className="my-2">
+              <label className="text-blue-700 font-sans text-xl mb-2">
+                Document verification
+              </label>
+              <div className="flex  justify-around p-1 bg-gray-200 w-28">
+                <img src={VectorSignUp} alt={VectorSignUp} />
+                <label className="SignUp-upload text-gray-700 text-lg">
+                  upload
+                </label>
+              </div>
+            </div>
             <div className="flex justify-between my-4">
               <label className="text-blue-700 font-sans text-xl mb-2">
-                Country
+                Create Password
               </label>
               <input
                 type="text"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
-                onChange={(e) => {
-                  dispatch(getCountry(e.target.value));
-                }}
               />
             </div>
           </div>
           <div className="pb-3 flex justify-center items-center">
+            {/* <button className=" BeforeSignUp-button  px-4 py-1  text-white">
+              Create Account
+            </button> */}
             <NavLink
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
-              to="/signUpOrg2"
+              to="/dashboardScreen"
             >
-              Next
+              Create Account
             </NavLink>
           </div>
         </div>
@@ -111,4 +104,4 @@ function SignUpOrganisation() {
   );
 }
 
-export default SignUpOrganisation;
+export default SignUpOrg2;

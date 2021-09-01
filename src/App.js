@@ -13,6 +13,8 @@ import RejectedFilesScreen from "./screens/RejectedFilesScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import HomePage from "./screens/HomePage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import RightSignUp from "./components1/RightSignUp";
+import SignUpOrg2 from "./screens/SignUpOrg2";
 
 function App() {
   return (
@@ -33,17 +35,13 @@ function App() {
             exact={true}
           ></Route>
           <Route
-            path="/dashboardScreen"
-            component={DashboardScreen}
+            path="/signUpOrganisation"
+            component={SignUpOrganisation}
             exact={true}
           ></Route>
+          <Route path="/signUpOrg2" component={SignUpOrg2} exact={true}></Route>
           <Route path="/forgotPwd" component={ForgotPwd} exact={true}></Route>
           <Route path="/homePage" component={HomePage} exact={true}></Route>
-          <Route
-            path="/dashboardScreen"
-            component={DashboardScreen}
-            exact={true}
-          ></Route>
           <Route
             path="/documents"
             component={GroupFilesScreen}
@@ -72,6 +70,7 @@ function App() {
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
       {/* <DashboardScreen></DashboardScreen> */}
       {/* <HomePage></HomePage> */}
+      {/* <SignUpOrg2></SignUpOrg2> */}
     </div>
   );
 }

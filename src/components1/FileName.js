@@ -3,7 +3,6 @@ import "../style.css";
 import approved_icon from "../Icons/approved_files.svg";
 import rejected_icon from "../Icons/Rejectedfiles.svg";
 import pending_icon from "../Icons/filePending.svg";
-import morevertical from "../Icons/morevertical.svg";
 
 function FileName(props) {
   const getStatusIcon = () => {
@@ -30,9 +29,6 @@ function FileName(props) {
         <label className="mb-2 text-base">{props.fileName}</label>
         <label className="text-base">{props.userName}</label>
       </div>
-      {/* <div>
-        <img src={morevertical} alt={morevertical} />
-      </div> */}
     </div>
   );
 }
