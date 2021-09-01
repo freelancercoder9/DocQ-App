@@ -3,46 +3,37 @@ import { Link } from "react-router-dom";
 import CustName from "../Icons/CustName.svg";
 import "../style.css";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  navbarActions_DASHBOARD,
+  navbarActions_DOCUMENTS,
+  navbarActions_UPLOAD,
+  navbarActions_EXISTINGUSERS,
+  navbarActions_NEWJOINEE,
+} from "../actions";
 
 function DashBoardNavbar() {
   return (
     <nav className="flex justify-between DashBoardNavbar-main">
-      <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">
-        DocTrin
-      </div>
+      <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">DocTrin</div>
       <div className="flex justify-between items-center font-sans  ">
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/dashboardScreen"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 " to="/dashboardScreen" activeClassName="bg-blue-800 text-white rounded">
           Dashboard
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/documents"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg  " to="/documents" activeClassName="bg-blue-800 text-white rounded">
           Documents
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/upload"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg" to="/upload" activeClassName="bg-blue-800 text-white rounded">
           Upload
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/users"
-        >
-          Users
+        <NavLink className="no-underline px-4 text-gray-500 text-lg" to="/users" activeClassName="bg-blue-800 text-white rounded">
+          Existing Users
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/newJoinee"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg" to="/newJoinee" activeClassName="bg-blue-800 text-white rounded">
           New Joinees
         </NavLink>
       </div>
