@@ -82,3 +82,21 @@ export const getCountry = (country) => {
     payload: country,
   };
 };
+export const getState = (userState) => {
+  return {
+    type: "STATE",
+    payload: userState,
+  };
+};
+export const getCity = (city) => {
+  return {
+    type: "CITY",
+    payload: city,
+  };
+};
+export const setRadioOrgCount = (userCount) => {
+  return {
+    type: "RADIO_ORGCOUNT",
+    payload: userCount,
+  };
+};
