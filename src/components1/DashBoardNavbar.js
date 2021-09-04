@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import CustName from "../Icons/CustName.svg";
 import "../style.css";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import {
-  navbarActions_DASHBOARD,
-  navbarActions_DOCUMENTS,
-  navbarActions_UPLOAD,
-  navbarActions_EXISTINGUSERS,
-  navbarActions_NEWJOINEE,
-} from "../actions";
 
 function DashBoardNavbar() {
   return (
