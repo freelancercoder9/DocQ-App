@@ -19,7 +19,7 @@ import SignUpOrg2 from "./screens/SignUpOrg2";
 function App() {
   return (
     <div className="h-full">
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/" component={HomePage} exact={true}></Route>
           <Route path="/signin" component={SignIn} exact={true}></Route>
@@ -55,7 +55,7 @@ function App() {
           ></Route>
           <Route path="/newJoinee" component={NewJoinee} exact={true}></Route>
         </Switch>
-      </Router>
+      </Router> */}
       {/* <BeforeSignUp></BeforeSignUp> */}
       {/* <SignUpIndividual></SignUpIndividual> */}
       {/* <SignUpOrganisation></SignUpOrganisation> */}
@@ -66,7 +66,7 @@ function App() {
       {/* <UserSettings></UserSettings> */}
       {/* <NewJoinee></NewJoinee> */}
       {/* <ManageUsersScreen></ManageUsersScreen> */}
-      {/* <GroupFilesScreen></GroupFilesScreen> */}
+      <GroupFilesScreen></GroupFilesScreen>
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
       {/* <DashboardScreen></DashboardScreen> */}
       {/* <HomePage></HomePage> */}

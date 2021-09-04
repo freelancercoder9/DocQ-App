@@ -100,3 +100,9 @@ export const setRadioOrgCount = (userCount) => {
     payload: userCount,
   };
 };
+export const selectedDocData = (selectedDocData) => {
+  return {
+    type: "SELECTEDDOC_DATA",
+    payload: selectedDocData,
+  };
+};

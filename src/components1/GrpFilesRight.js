@@ -1,7 +1,9 @@
 import React from "react";
 import { getApprovedFiles } from "../actions";
+import { useSelector } from "react-redux";
 
 function GrpFilesRight() {
+  const selectedData = useSelector((state) => state.selectedFile);
   const getApprovedFiles = () => {
     console.log("ApprovedFiles");
   };
@@ -12,10 +14,10 @@ function GrpFilesRight() {
     <div className="h-full flex flex-col">
       <div className=" h-12  border-2  rounded-sm  flex justify-center items-center mb-3 ">
         <div className="border-r-2  pr-5">
-          <label className="text-lg ">File Name</label>
+          <label className="text-lg ">{selectedData.fileName}</label>
         </div>
         <div className="pl-5">
-          <label className="text-lg">From user</label>
+          <label className="text-lg">{selectedData.userName}</label>
         </div>
       </div>
       <div className="flex flex-1 flex-col border-2 "></div>

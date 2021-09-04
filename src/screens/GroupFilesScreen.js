@@ -20,12 +20,13 @@ function GroupFilesScreen() {
         <div className="w-7/12">
           <FilesComp></FilesComp>
           <div className="flex flex-wrap mt-10 overflow-y-scroll ">
-            {docListData.map((item) => {
+            {docListData.map((item, index) => {
               return (
                 <FileName
                   fileIconStatus={item.fileStatus}
                   fileName={item.docName}
                   userName={item.userName}
+                  key={index}
                 ></FileName>
               );
             })}

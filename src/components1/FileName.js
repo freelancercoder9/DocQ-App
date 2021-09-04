@@ -3,8 +3,11 @@ import "../style.css";
 import approved_icon from "../Icons/approved_files.svg";
 import rejected_icon from "../Icons/Rejectedfiles.svg";
 import pending_icon from "../Icons/filePending.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { selectedDocData } from "../actions";
 
 function FileName(props) {
+  const dispatch = useDispatch();
   const getStatusIcon = () => {
     let fileICon;
 
@@ -22,7 +25,17 @@ function FileName(props) {
     return fileICon;
   };
   return (
-    <div className=" FileName flex border border-black w-60  items-center p-2 mx-2 my-3 ">
+    <div
+      className=" FileName flex border border-black w-60  items-center p-2 mx-2 my-3"
+      onClick={() => {
+        // console.log(props.fileName, props.userName);
+        var selectedData = {
+          fileName: props.fileName,
+          userName: props.userName,
+        };
+        dispatch(selectedDocData(selectedData));
+      }}
+    >
       {getStatusIcon()}
 
       <div className="flex flex-col ml-3">
