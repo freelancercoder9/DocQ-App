@@ -13,6 +13,7 @@ import {
 
 function SignUpOrganisation() {
   const dispatch = useDispatch();
+  const orgData_Display = useSelector((state) => state.signUpOrg);
   return (
     <div className="grid grid-cols-3  BeforeSignUp-main h-full">
       <div className="col-span-1 flex justify-center items-center LeftSignup">
@@ -93,6 +94,9 @@ function SignUpOrganisation() {
             <NavLink
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
               to="/signUpOrg2"
+              onClick={() => {
+                console.log(orgData_Display);
+              }}
             >
               Next
             </NavLink>

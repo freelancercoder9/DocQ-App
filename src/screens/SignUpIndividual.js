@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function SignUpIndividual() {
   const dispatch = useDispatch();
+  const indData_Display = useSelector((state) => state.signUpInd);
   return (
     <div className="grid grid-cols-3  BeforeSignUp-main h-full">
       <div className="col-span-1 flex justify-center items-center LeftSignup">
@@ -93,6 +94,9 @@ function SignUpIndividual() {
             <NavLink
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
               to="/dashboardScreen"
+              onClick={() => {
+                console.log(indData_Display);
+              }}
             >
               Create Account
             </NavLink>
