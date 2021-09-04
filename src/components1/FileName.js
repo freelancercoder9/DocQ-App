@@ -11,13 +11,9 @@ function FileName(props) {
     if (props.fileIconStatus === "Pending") {
       fileICon = <img src={pending_icon} className="h-10" alt={pending_icon} />;
     } else if (props.fileIconStatus === "Rejected") {
-      fileICon = (
-        <img src={rejected_icon} className="h-10 " alt={rejected_icon} />
-      );
+      fileICon = <img src={rejected_icon} className="h-10 " alt={rejected_icon} />;
     } else if (props.fileIconStatus === "Approved") {
-      fileICon = (
-        <img src={approved_icon} className="h-10" alt={approved_icon} />
-      );
+      fileICon = <img src={approved_icon} className="h-10" alt={approved_icon} />;
     }
     return fileICon;
   };

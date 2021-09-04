@@ -19,7 +19,7 @@ function GroupFilesScreen() {
       <div className=" flex-1 flex justify-around mt-3 overflow-hidden">
         <div className="w-7/12">
           <FilesComp></FilesComp>
-          <div className="flex  flex-wrap mt-10 overflow-auto px-2 bg-yellow-300">
+          <div className="flex  flex-wrap mt-10 overflow-auto px-2 ">
             {docListData.map((item) => {
               return <FileName fileIconStatus={item.fileStatus} fileName={item.docName} userName={item.userName}></FileName>;
             })}
