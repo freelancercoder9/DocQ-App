@@ -1,12 +1,7 @@
 import React from "react";
 import "../style.css";
 import { useDispatch } from "react-redux";
-import {
-  getAllFiles,
-  getApprovedFiles,
-  getPendingFiles,
-  getRejectedFiles,
-} from "../actions";
+import { getAllFiles, getApprovedFiles, getPendingFiles, getRejectedFiles } from "../actions";
 
 function FilesComp() {
   const dispatch = useDispatch();
@@ -30,28 +25,16 @@ function FilesComp() {
 
   return (
     <div className="flex justify-between items-center">
-      <button
-        className="FilesComp border border-black bg-white py-2 px-3 text-center"
-        onClick={getAllFilesFunc}
-      >
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center" onClick={getAllFilesFunc}>
         All Files
       </button>
-      <button
-        className="FilesComp border border-black bg-white py-2 px-3 text-center"
-        onClick={getApprovedFilesFunc}
-      >
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center" onClick={getApprovedFilesFunc}>
         Approved Files
       </button>
-      <button
-        className="FilesComp border border-black bg-white py-2 px-3 text-center"
-        onClick={getPendingFilesFunc}
-      >
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center" onClick={getPendingFilesFunc}>
         Pending Files
       </button>
-      <button
-        className="FilesComp border border-black bg-white py-2 px-3 text-center"
-        onClick={getRejectedFilesFunc}
-      >
+      <button className="FilesComp border border-black bg-white py-2 px-3 text-center" onClick={getRejectedFilesFunc}>
         Rejected Files
       </button>
     </div>
