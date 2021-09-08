@@ -7,42 +7,25 @@ import { NavLink } from "react-router-dom";
 function DashBoardNavbar() {
   return (
     <nav className="flex justify-between DashBoardNavbar-main">
-      <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">
-        DocTrin
-      </div>
+      <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">EDEMS</div>
       <div className="flex justify-between items-center font-sans  ">
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/dashboardScreen"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white " to="/dashboardScreen">
           Dashboard
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/documents"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white " to="/documents">
           Documents
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/upload"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white " to="/upload">
           Upload
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/users"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white " to="/users">
           Users
         </NavLink>
 
-        <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
-          to="/newJoinee"
-        >
+        <NavLink className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white " to="/newJoinee">
           New Joinees
         </NavLink>
       </div>

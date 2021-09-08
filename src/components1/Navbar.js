@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="  flex h-14">
       <div className="w-3/12 flex items-center px-4 ">
-        <label className="text-2xl text-blue-900 font-sans">DocTrin</label>
+        <label className="text-2xl text-blue-900 font-sans">EDEMS</label>
       </div>
       <div className="flex justify-evenly items-center w-5/12">
         <Link className="no-underline text-lg text-gray-500">Explore</Link>

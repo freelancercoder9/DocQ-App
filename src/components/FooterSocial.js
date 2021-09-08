@@ -17,9 +17,7 @@ function FooterSocial() {
         <img src={Linkedin} alt={Linkedin} />
       </div>
       <div className=" text-center">
-        <label className="text-4xl text-white font-semibold mt-3">
-          DocTrin
-        </label>
+        <label className="text-4xl text-white font-semibold mt-3">EDEMS</label>
         <div>
           <label className="text-white text-xs">Copyrighted @ 2021</label>
         </div>

@@ -19,43 +19,23 @@ import SignUpOrg2 from "./screens/SignUpOrg2";
 function App() {
   return (
     <div className="h-full">
-      {/* <Router>
+      <Router>
         <Switch>
           <Route path="/" component={HomePage} exact={true}></Route>
           <Route path="/signin" component={SignIn} exact={true}></Route>
           <Route path="/signup" component={BeforeSignUp} exact={true}></Route>
-          <Route
-            path="/dashboardScreen"
-            component={DashboardScreen}
-            exact={true}
-          ></Route>
-          <Route
-            path="/signUpIndividual"
-            component={SignUpIndividual}
-            exact={true}
-          ></Route>
-          <Route
-            path="/signUpOrganisation"
-            component={SignUpOrganisation}
-            exact={true}
-          ></Route>
+          <Route path="/dashboardScreen" component={DashboardScreen} exact={true}></Route>
+          <Route path="/signUpIndividual" component={SignUpIndividual} exact={true}></Route>
+          <Route path="/signUpOrganisation" component={SignUpOrganisation} exact={true}></Route>
           <Route path="/signUpOrg2" component={SignUpOrg2} exact={true}></Route>
           <Route path="/forgotPwd" component={ForgotPwd} exact={true}></Route>
           <Route path="/homePage" component={HomePage} exact={true}></Route>
-          <Route
-            path="/documents"
-            component={GroupFilesScreen}
-            exact={true}
-          ></Route>
+          <Route path="/documents" component={GroupFilesScreen} exact={true}></Route>
           <Route path="/upload" component={UploadFiles} exact={true}></Route>
-          <Route
-            path="/users"
-            component={ManageUsersScreen}
-            exact={true}
-          ></Route>
+          <Route path="/users" component={ManageUsersScreen} exact={true}></Route>
           <Route path="/newJoinee" component={NewJoinee} exact={true}></Route>
         </Switch>
-      </Router> */}
+      </Router>
       {/* <BeforeSignUp></BeforeSignUp> */}
       {/* <SignUpIndividual></SignUpIndividual> */}
       {/* <SignUpOrganisation></SignUpOrganisation> */}
@@ -66,7 +46,7 @@ function App() {
       {/* <UserSettings></UserSettings> */}
       {/* <NewJoinee></NewJoinee> */}
       {/* <ManageUsersScreen></ManageUsersScreen> */}
-      <GroupFilesScreen></GroupFilesScreen>
+      {/* <GroupFilesScreen></GroupFilesScreen> */}
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
       {/* <DashboardScreen></DashboardScreen> */}
       {/* <HomePage></HomePage> */}
