@@ -7,6 +7,7 @@ import "../style.css";
 
 function UploadFiles() {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+
   return (
     <div className="">
       <div>
@@ -15,13 +16,13 @@ function UploadFiles() {
       <div className="flex justify-evenly  items-center mt-5">
         <div {...getRootProps({ className: "dropzone uploadFiles w-6/12 border-black border ml-7 bg-gray-100" })}>
           <input {...getInputProps()} />
+
+          <div className="flex justify-evenly items-center ">
+            <label className="text-3xl text-red-900">Drag 'n' drop some files here, or click to select files</label>
+          </div>
           {acceptedFiles.map((file) => (
             <li key={file.path}>{file.path}</li>
           ))}
-          <div className="flex justify-evenly items-center ">
-            <img src={dragdrop} alt={dragdrop} />
-            <label className="text-3xl text-red-900">Drag 'n' drop some files here, or click to select files</label>
-          </div>
         </div>
         <div className=" uploadFiles w-4/12 border-black border flex flex-col justify-around">
           <div className=" flex flex-col justify-center items-center">
@@ -35,9 +36,7 @@ function UploadFiles() {
         </div>
       </div>
       <div className="flex justify-center items-center mt-5">
-        <div className="mr-4">
-          <button className="bg-purple-500 px-4 py-2 text-white rounded-sm text-lg ">Browse files</button>
-        </div>
+        <div className="mr-4"></div>
         <div className="flex w-40 bg-purple-500 px-3 py-2 text-white rounded-sm text-lg flex justify-evenly items-center">
           <div className="text-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,7 +48,7 @@ function UploadFiles() {
               />
             </svg>
           </div>
-          <button>Upload</button>
+          <button>Submit</button>
         </div>
       </div>
     </div>
