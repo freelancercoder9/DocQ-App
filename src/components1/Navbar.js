@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -15,8 +16,12 @@ function Navbar() {
       </div>
       <div className="w-2/12"></div>
       <div className="w-2/12 flex items-center justify-evenly ">
-        <button className="bg-green-400 text-white px-3 py-1">Sign In</button>
-        <button className="bg-purple-500 text-white px-3 py-1">Sign Up</button>
+        <NavLink className="bg-green-400 text-white px-4 py-1 rounded-md no-underline" to="/signIn">
+          SignIn
+        </NavLink>
+        <NavLink className="bg-purple-500 text-white px-4 py-1 rounded-md no-underline" to="/signup">
+          Sign Up
+        </NavLink>
       </div>
     </div>
   );

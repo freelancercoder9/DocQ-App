@@ -10,11 +10,11 @@ function FooterSocial() {
   return (
     <div>
       <div className="flex justify-evenly items-center">
-        <img src={Facebook} className="" />
-        <img src={Instagram} className="" />
-        <img src={Twitter} className="" />
-        <img src={Youtube} className="" />
-        <img src={Linkedin} className="" />
+        <img src={Facebook} alt={Facebook} />
+        <img src={Instagram} alt={Instagram} />
+        <img src={Twitter} alt={Twitter} />
+        <img src={Youtube} alt={Youtube} />
+        <img src={Linkedin} alt={Linkedin} />
       </div>
       <div className=" text-center">
         <label className="text-4xl text-white font-semibold mt-3">

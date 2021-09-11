@@ -6,7 +6,7 @@ function ManageUsers() {
     <div className="">
       <nav className="flex items-center justify-between">
         <div className="flex">
-          <img src={BackArrow} className=" mx-3" />
+          <img src={BackArrow} className=" mx-3" alt={BackArrow} />
           <label className="text-2xl"> Manage Users</label>
         </div>
         <div className="border border-black w-56 p-1 rounded-md bg-white flex justify-evenly items-center mr-6">

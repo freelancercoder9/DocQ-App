@@ -10,13 +10,13 @@ function FileIcons() {
         All
       </div>
       <div className=" FileIcons border border-black w-20 p-1 flex  justify-center">
-        <img src={Allfiles} />
+        <img src={Allfiles} alt={Allfiles} />
       </div>
       <div className=" FileIcons border border-black w-20 p-1 flex  justify-center h-full">
-        <img src={filePending} className="h-7" />
+        <img src={filePending} className="h-7" alt={filePending} />
       </div>
       <div className=" FileIcons border border-black w-20 p-1 flex  justify-center">
-        <img src={Rejectedfiles} />
+        <img src={Rejectedfiles} alt={Rejectedfiles} />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ function ShareFiles() {
         </div>
         <div className="w-3/12 border border-black flex justify-center items-center bg-red-50">
           <div className="mr-4">
-            <img src={successfulUpload} />
+            <img src={successfulUpload} alt={successfulUpload} />
           </div>
           <div className="text-xl">File name</div>
         </div>

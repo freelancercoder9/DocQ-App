@@ -3,7 +3,7 @@ import React from "react";
 function HomeSampleTool() {
   return (
     <div>
-      <div className="sample-tool rounded-md w-1/4">
+      <div className="sample-tool rounded-md">
         <label className="text-2xl font-sans p-2">Sample Tool</label>
         <label className="text-lg font-sans p-2">
           Sample Tool description , its features in short only for customer

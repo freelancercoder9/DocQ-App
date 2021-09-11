@@ -1,69 +1,76 @@
-import HomeUpload from "./components/HomeUpload";
-import HomeUploading from "./components/HomeUploading";
-import HomeSec2 from "./components/HomeSec2";
-import HomeToolsBar from "./components/HomeToolsBar";
-import HomeSampleTool from "./components/HomeSampleTool";
-import HomeCustName from "./components/HomeCustName";
-import HomeSec5 from "./components/HomeSec5";
-import Footer from "./components/Footer";
-import FooterSocial from "./components/FooterSocial";
-import Navbar from "./components1/Navbar";
-import Test from "./components1/Test";
-import BeforeSignUp from "./components1/BeforeSignUp";
-import LeftSignup from "./components1/LeftSignup";
-import SignUpIndividual from "./components1/SignUpIndividual";
-import RightSignUp from "./components1/RightSignUp";
-import SignUpOrganisation from "./components1/SignUpOrganisation";
-import SignIn from "./components1/SignIn";
-import ForgotPwd from "./components1/ForgotPwd";
-import DashBoardNavbar from "./components1/DashBoardNavbar";
-import DashboardLeftPane from "./components1/DashboardLeftPane";
-import DashboardRight from "./components1/DashboardRight";
+import BeforeSignUp from "./screens/BeforeSignUp";
+import SignUpIndividual from "./screens/SignUpIndividual";
+import SignUpOrganisation from "./screens/SignUpOrganisation";
+import SignIn from "./screens/SignIn";
+import ForgotPwd from "./screens/ForgotPwd";
 import UploadFiles from "./screens/UploadFiles";
 import ShareFiles from "./screens/ShareFiles";
-import DocumentsBar from "./components1/DocumentsBar";
-import FilesComp from "./components1/FilesComp";
-import FileName from "./components1/FileName";
-import FileIcons from "./components1/FileIcons";
-import ManageUsers from "./components1/ManageUsers";
-import UserSettings from "./components1/UserSettings";
-import ManageUsersHeading from "./components1/ManageUsersHeading";
-import GrpFilesRight from "./components1/GrpFilesRight";
+import UserSettings from "./screens/UserSettings";
+import NewJoinee from "./screens/NewJoinee";
+import ManageUsersScreen from "./screens/ManageUsersScreen";
+import GroupFilesScreen from "./screens/GroupFilesScreen";
+import RejectedFilesScreen from "./screens/RejectedFilesScreen";
+import DashboardScreen from "./screens/DashboardScreen";
+import HomePage from "./screens/HomePage";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import RightSignUp from "./components1/RightSignUp";
+import SignUpOrg2 from "./screens/SignUpOrg2";
 
 function App() {
   return (
     <div className="h-full">
-      {/* <Navbar></Navbar> */}
-      {/* <HomeUpload></HomeUpload> */}
-      {/* <HomeUploading></HomeUploading> */}
-      {/* <HomeSec2></HomeSec2> */}
-      {/* <HomeToolsBar></HomeToolsBar> */}
-      {/* <HomeSampleTool></HomeSampleTool> */}
-      {/* <HomeCustName></HomeCustName> */}
-      <HomeSec5></HomeSec5>
-      {/* <Footer></Footer> */}
-      {/* <FooterSocial></FooterSocial> */}
-      {/* <Test></Test> */}
+      <Router>
+        <Switch>
+          <Route path="/" component={HomePage} exact={true}></Route>
+          <Route path="/signin" component={SignIn} exact={true}></Route>
+          <Route path="/signup" component={BeforeSignUp} exact={true}></Route>
+          <Route
+            path="/dashboardScreen"
+            component={DashboardScreen}
+            exact={true}
+          ></Route>
+          <Route
+            path="/signUpIndividual"
+            component={SignUpIndividual}
+            exact={true}
+          ></Route>
+          <Route
+            path="/signUpOrganisation"
+            component={SignUpOrganisation}
+            exact={true}
+          ></Route>
+          <Route path="/signUpOrg2" component={SignUpOrg2} exact={true}></Route>
+          <Route path="/forgotPwd" component={ForgotPwd} exact={true}></Route>
+          <Route path="/homePage" component={HomePage} exact={true}></Route>
+          <Route
+            path="/documents"
+            component={GroupFilesScreen}
+            exact={true}
+          ></Route>
+          <Route path="/upload" component={UploadFiles} exact={true}></Route>
+          <Route
+            path="/users"
+            component={ManageUsersScreen}
+            exact={true}
+          ></Route>
+          <Route path="/newJoinee" component={NewJoinee} exact={true}></Route>
+        </Switch>
+      </Router>
       {/* <BeforeSignUp></BeforeSignUp> */}
-      {/* <LeftSignup></LeftSignup> */}
       {/* <SignUpIndividual></SignUpIndividual> */}
-      {/* <RightSignUp></RightSignUp> */}
       {/* <SignUpOrganisation></SignUpOrganisation> */}
       {/* <SignIn></SignIn> */}
       {/* <ForgotPwd></ForgotPwd> */}
-      {/* <DashBoardNavbar></DashBoardNavbar> */}
-      {/* <DashboardLeftPane></DashboardLeftPane> */}
-      {/* <DashboardRight></DashboardRight> */}
       {/* <UploadFiles></UploadFiles> */}
       {/* <ShareFiles></ShareFiles> */}
-      {/* <DocumentsBar></DocumentsBar> */}
-      {/* <FilesComp></FilesComp> */}
-      {/* <FileName></FileName> */}
-      {/* <FileIcons></FileIcons> */}
-      {/* <ManageUsers></ManageUsers> */}
       {/* <UserSettings></UserSettings> */}
-      {/* <ManageUsersHeading></ManageUsersHeading> */}
-      {/* <GrpFilesRight></GrpFilesRight> */}
+      {/* <NewJoinee></NewJoinee> */}
+      {/* <ManageUsersScreen></ManageUsersScreen> */}
+      {/* <GroupFilesScreen></GroupFilesScreen> */}
+      {/* <RejectedFilesScreen></RejectedFilesScreen> */}
+      {/* <DashboardScreen></DashboardScreen> */}
+      {/* <HomePage></HomePage> */}
+      {/* <SignUpOrg2></SignUpOrg2> */}
     </div>
   );
 }
