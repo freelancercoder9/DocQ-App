@@ -1,0 +1,1230 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: DocQ Application
+  description: Document verification application
+  contact:
+    name: Chandra Pasumarthi
+    email: chanduthedev@gmail.com
+    url: www.chanduthedev.com
+servers:
+  - url: http://localhost:7777
+tags:
+  - name: Organizations API
+  - name: Users API
+  - name: Documents API
+
+paths:
+  /org/register:
+    post:
+      description: "For creating new organizarion"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              allOf:
+                - $ref: "#/components/schemas/OrganizationDetails"
+
+      responses:
+        201:
+          description: New user added
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/OrganizationDetails"
+                        properties:
+                          organisationCode:
+                            type: string
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        403:
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: Recipe not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Organizations API
+  /org/update:
+    patch:
+      description: "Update organisation dertails"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - organisationId
+              properties:
+                organisationId:
+                  type: string
+                organisationName:
+                  type: string
+                emailId:
+                  type: string
+                mobileNo:
+                  type: string
+                country:
+                  type: string
+                state:
+                  type: string
+                city:
+                  type: string
+                membersCount:
+                  type: number
+
+      responses:
+        200:
+          description: Updated organization details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/OrganizationDetails"
+                        properties:
+                          organisationCode:
+                            type: string
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        403:
+          description: Organization already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: Organisation not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Organizations API
+  /org/{orgId}:
+    get:
+      description: "view user details"
+      parameters:
+        - in: path
+          name: orgId
+          required: true
+          schema:
+            type: string
+
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: View organization details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/OrganizationDetails"
+                        properties:
+                          organisationCode:
+                            type: string
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        403:
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Organizations API
+    delete:
+      parameters:
+        - in: path
+          name: orgId
+          required: true
+          schema:
+            type: string
+            example: AP072233
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        204:
+          description: "resource deleted successfully"
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        400:
+          description: Bad request error
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+              description: API session ID
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+              description: API session ID
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+              description: API session ID
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Organizations API
+
+  /user/register:
+    post:
+      description: "For creating new user"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              allOf:
+                - $ref: "#/components/schemas/UserDetails"
+
+      responses:
+        201:
+          description: New user added
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/UserDetails"
+                        properties:
+                          userId:
+                            type: string
+                          status:
+                            type: string
+                            enum:
+                              - pending
+                              - approved
+                              - rejected
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        403:
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: Recipe not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+  /user/login:
+    post:
+      description: "Login for the existing user"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                emailId:
+                  type: string
+                password:
+                  type: string
+                  minLength: 6
+                  maxLength: 32
+
+      responses:
+        200:
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/UserDetails"
+                        properties:
+                          userId:
+                            type: string
+                          status:
+                            type: string
+                            enum:
+                              - pending
+                              - approved
+                              - rejected
+                          x-access-token:
+                            type: string
+                            format: JWT token
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+      tags:
+        - Users API
+  /user/update:
+    patch:
+      description: "Update user details"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - userId
+              properties:
+                userId:
+                  type: string
+                organisationId:
+                  type: number
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                emailId:
+                  type: string
+                mobileNo:
+                  type: string
+                role:
+                  type: string
+                status:
+                  type: string
+                  enum:
+                    - pending
+                    - approved
+                    - rejected
+
+      responses:
+        200:
+          description: User details updated
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/UserDetails"
+                        properties:
+                          userId:
+                            type: string
+                          status:
+                            type: string
+                            enum:
+                              - pending
+                              - approved
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        403:
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User details not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+  /user/{userId}:
+    get:
+      description: "View organisation details"
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: View organization details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: object
+                        allOf:
+                          - $ref: "#/components/schemas/UserDetails"
+                        properties:
+                          userId:
+                            type: string
+                          status:
+                            type: string
+                            enum:
+                              - pending
+                              - approved
+                              - rejected
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+    delete:
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+            example: AP072233
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        204:
+          description: "resource deleted successfully"
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        400:
+          description: Bad request error
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+              description: API session ID
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+              description: API session ID
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          headers:
+            x-access-token:
+              schema:
+                type: string
+                format: JWT token
+              description: API session ID
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+
+  /users/all:
+    get:
+      description: "Get All user details"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+  /users/pending:
+    get:
+      description: "Get all pending users"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+  /users/approved:
+    get:
+      description: "Get all approved users"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+  /users/rejected:
+    get:
+      description: "Get all rejected users"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+
+  /docs/all:
+    get:
+      description: "Get All user details"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/DocumentDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Documents API
+  /docs/pending:
+    get:
+      description: "Get all pending documents"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/DocumentDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Documents API
+  /docs/approved:
+    get:
+      description: "Get all approved documents"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/DocumentDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Documents API
+  /docs/rejected:
+    get:
+      description: "Get all rejected documents"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/DocumentDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Documents API
+
+components:
+  schemas:
+    basicResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+    UserDetails:
+      type: object
+      required:
+        - organisationId
+        - firstName
+        - lastName
+        - emailId
+        - mobileNo
+        - role
+        - status
+      properties:
+        organisationId:
+          type: number
+        firstName:
+          type: string
+        lastName:
+          type: string
+        emailId:
+          type: string
+        mobileNo:
+          type: string
+        role:
+          type: string
+        status:
+          type: string
+          enum:
+            - pending
+            - approved
+            - rejected
+    DocumentDetails:
+      type: object
+      required:
+        - emailId
+        - documentName
+        - uploadedDate
+        - approvedBy
+      properties:
+        emailId:
+          type: string
+        documentName:
+          type: string
+        uploadedDate:
+          type: string
+        imageUrl:
+          type: string
+        approvedDate:
+          type: string
+        approvedBy:
+          type: string
+    OrganizationDetails:
+      type: object
+      required:
+        - emailId
+        - mobileNo
+        - country
+        - state
+        - city
+      properties:
+        organisationName:
+          type: string
+        emailId:
+          type: string
+        mobileNo:
+          type: string
+        country:
+          type: string
+        state:
+          type: string
+        city:
+          type: string
+        membersCount:
+          type: number
