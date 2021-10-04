@@ -37,7 +37,7 @@ function SignIn() {
                 Password
               </label>
               <input
-                type="text"
+                type="Password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
               />
             </div>

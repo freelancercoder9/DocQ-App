@@ -119,7 +119,7 @@ function SignUpOrg2() {
                 Create Password
               </label>
               <input
-                type="text"
+                type="Password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
                   dispatch(getCreatepwd(e.target.value));
@@ -131,7 +131,7 @@ function SignUpOrg2() {
                 Confirm Password
               </label>
               <input
-                type="text"
+                type="Password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
                   dispatch(getConfirmPwd(e.target.value));

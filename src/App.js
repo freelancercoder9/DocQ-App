@@ -5,7 +5,7 @@ import SignIn from "./screens/SignIn";
 import ForgotPwd from "./screens/ForgotPwd";
 import UploadFiles from "./screens/UploadFiles";
 import ShareFiles from "./screens/ShareFiles";
-import UserSettings from "./screens/UserSettings";
+import UserSettings from "./screens/UserSettingsPopUp";
 import NewJoinee from "./screens/NewJoinee";
 import ManageUsersScreen from "./screens/ManageUsersScreen";
 import GroupFilesScreen from "./screens/GroupFilesScreen";
@@ -15,11 +15,12 @@ import HomePage from "./screens/HomePage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import RightSignUp from "./components1/RightSignUp";
 import SignUpOrg2 from "./screens/SignUpOrg2";
+import UserPopUp from "./screens/UserPopUp";
 
 function App() {
   return (
     <div className="h-full">
-      {/* <Router>
+      <Router>
         <Switch>
           <Route path="/" component={HomePage} exact={true}></Route>
           <Route path="/signin" component={SignIn} exact={true}></Route>
@@ -55,7 +56,7 @@ function App() {
           ></Route>
           <Route path="/newJoinee" component={NewJoinee} exact={true}></Route>
         </Switch>
-      </Router> */}
+      </Router>
       {/* <BeforeSignUp></BeforeSignUp> */}
       {/* <SignUpIndividual></SignUpIndividual> */}
       {/* <SignUpOrganisation></SignUpOrganisation> */}
@@ -63,10 +64,11 @@ function App() {
       {/* <ForgotPwd></ForgotPwd> */}
       {/* <UploadFiles></UploadFiles> */}
       {/* <ShareFiles></ShareFiles> */}
-      {/* <UserSettings></UserSettings> */}
+      {/* <UserSettingsPopUp></UserSettingsPopUp> */}
+      {/* <UserPopUp></UserPopUp> */}
       {/* <NewJoinee></NewJoinee> */}
       {/* <ManageUsersScreen></ManageUsersScreen> */}
-      <GroupFilesScreen></GroupFilesScreen>
+      {/* <GroupFilesScreen></GroupFilesScreen> */}
       {/* <RejectedFilesScreen></RejectedFilesScreen> */}
       {/* <DashboardScreen></DashboardScreen> */}
       {/* <HomePage></HomePage> */}

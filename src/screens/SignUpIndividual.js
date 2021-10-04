@@ -68,7 +68,7 @@ function SignUpIndividual() {
                 Create Password
               </label>
               <input
-                type="text"
+                type="Password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
                   console.log(e.target.value);
@@ -81,7 +81,7 @@ function SignUpIndividual() {
                 Confirm Password
               </label>
               <input
-                type="text"
+                type="Password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
                   console.log(e.target.value);

@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import editBlue from "../Icons/editBlue.svg";
 import greenTick from "../Icons/greenTick.svg";
 import redCross from "../Icons/redCross.svg";
+import UserPopUp from "../screens/UserPopUp";
 
 function NewJoineeList() {
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div>
       <div className="bg-red-50 flex justify-around items-center ">
@@ -21,7 +27,14 @@ function NewJoineeList() {
           <img src={editBlue} alt={editBlue} />
         </div>
         <div className=" w-1/6 flex items-center justify-evenly">
-          <img src={greenTick} className="cursor-pointer" alt={greenTick} />
+          <img
+            src={greenTick}
+            className="cursor-pointer"
+            alt={greenTick}
+            onClick={togglePopup}
+          />
+          {isOpen && <UserPopUp handleClose={togglePopup}></UserPopUp>}
+
           <img src={redCross} className="cursor-pointer" alt={redCross} />
         </div>
       </div>

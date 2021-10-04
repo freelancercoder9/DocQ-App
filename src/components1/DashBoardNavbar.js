@@ -12,35 +12,40 @@ function DashBoardNavbar() {
       </div>
       <div className="flex justify-between items-center font-sans  ">
         <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          className="no-underline px-4 text-gray-500 text-lg"
+          activeClassName="bg-blue-800 text-white rounded"
           to="/dashboardScreen"
         >
           Dashboard
         </NavLink>
 
         <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          className="no-underline px-4 text-gray-500 text-lg"
+          activeClassName="bg-blue-800 text-white rounded"
           to="/documents"
         >
           Documents
         </NavLink>
 
         <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          className="no-underline px-4 text-gray-500 text-lg"
+          activeClassName="bg-blue-800 text-white rounded"
           to="/upload"
         >
           Upload
         </NavLink>
 
         <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          className="no-underline px-4 text-gray-500 text-lg"
+          activeClassName="bg-blue-800 text-white rounded"
           to="/users"
         >
           Users
         </NavLink>
 
         <NavLink
-          className="no-underline px-4 text-gray-500 text-lg  hover:bg-blue-800 hover:text-white "
+          className="no-underline px-4 text-gray-500 text-lg"
+          activeClassName="bg-blue-800 text-white rounded"
           to="/newJoinee"
         >
           New Joinees
