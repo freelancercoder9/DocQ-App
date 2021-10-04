@@ -1,8 +1,8 @@
 import React from "react";
-import DashBoardNavbar from "../components1/DashBoardNavbar";
-import ManageUserList from "../components1/ManageUserList";
-import ManageUsers from "../components1/ManageUsers";
-import ManageUsersHeading from "../components1/ManageUsersHeading";
+import DashBoardNavbar from "../components/DashBoardNavbar";
+import ManageUserList from "../components/ManageUserList";
+import ManageUsers from "../components/ManageUsers";
+import ManageUsersHeading from "../components/ManageUsersHeading";
 
 function ManageUsersScreen() {
   return (

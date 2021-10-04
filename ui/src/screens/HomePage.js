@@ -2,7 +2,7 @@ import React from "react";
 import HomeUploading from "../components/HomeUploading";
 import HomeSec2 from "../components/HomeSec2";
 import HomeSec5 from "../components/HomeSec5";
-import Navbar from "../components1/Navbar";
+import Navbar from "../components/Navbar";
 import HomeToolsBar from "../components/HomeToolsBar";
 import HomeSampleTool from "../components/HomeSampleTool";
 import HomeCustName from "../components/HomeCustName";

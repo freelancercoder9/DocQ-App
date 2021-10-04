@@ -1,9 +1,9 @@
 import React from "react";
-import DashBoardNavbar from "../components1/DashBoardNavbar";
-import DocumentsBar from "../components1/DocumentsBar";
-import FileName from "../components1/FileName";
-import FilesComp from "../components1/FilesComp";
-import GrpFilesRight from "../components1/GrpFilesRight";
+import DashBoardNavbar from "../components/DashBoardNavbar";
+import DocumentsBar from "../components/DocumentsBar";
+import FileName from "../components/FileName";
+import FilesComp from "../components/FilesComp";
+import GrpFilesRight from "../components/GrpFilesRight";
 import { useSelector } from "react-redux";
 
 function GroupFilesScreen() {
