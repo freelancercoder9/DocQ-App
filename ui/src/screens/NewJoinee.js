@@ -1,8 +1,8 @@
 import React from "react";
-import DashBoardNavbar from "../components1/DashBoardNavbar";
-import NewJoineeHeading from "../components1/NewJoineeHeading";
-import NewJoineeList from "../components1/NewJoineeList";
-import NewJoineeSearch from "../components1/NewJoineeSearch";
+import DashBoardNavbar from "../components/DashBoardNavbar";
+import NewJoineeHeading from "../components/NewJoineeHeading";
+import NewJoineeList from "../components/NewJoineeList";
+import NewJoineeSearch from "../components/NewJoineeSearch";
 
 function NewJoinee() {
   return (

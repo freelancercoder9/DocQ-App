@@ -1,7 +1,7 @@
 import React from "react";
-import DashboardLeftPane from "../components1/DashboardLeftPane";
-import DashBoardNavbar from "../components1/DashBoardNavbar";
-import DashboardRight from "../components1/DashboardRight";
+import DashboardLeftPane from "../components/DashboardLeftPane";
+import DashBoardNavbar from "../components/DashBoardNavbar";
+import DashboardRight from "../components/DashboardRight";
 
 function DashboardScreen() {
   return (

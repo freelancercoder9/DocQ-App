@@ -1,5 +1,5 @@
 import React from "react";
-import DashBoardNavbar from "../components1/DashBoardNavbar";
+import DashBoardNavbar from "../components/DashBoardNavbar";
 
 import successfulUpload from "../Icons/successfulUpload.svg";
 

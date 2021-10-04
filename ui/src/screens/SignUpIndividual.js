@@ -1,5 +1,5 @@
 import React from "react";
-import LeftSignup from "../components1/LeftSignup";
+import LeftSignup from "../components/LeftSignup";
 import { NavLink } from "react-router-dom";
 import {
   getConfirmPwd,
