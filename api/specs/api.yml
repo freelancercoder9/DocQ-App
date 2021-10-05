@@ -327,6 +327,9 @@ paths:
               type: object
               allOf:
                 - $ref: "#/components/schemas/UserDetails"
+              properties:
+                password:
+                  type: string
 
       responses:
         201:
