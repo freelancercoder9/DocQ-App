@@ -8,6 +8,16 @@ const SignUpOrgReducer = (state = {}, action) => {
       return (state = { ...state, mobileNo: action.payload });
     case "COUNTRY":
       return (state = { ...state, country: action.payload });
+    case "STATE":
+      return (state = { ...state, state: action.payload });
+    case "CITY":
+      return (state = { ...state, city: action.payload });
+    case "RADIO_ORGCOUNT":
+      return (state = { ...state, membersCount: action.payload });
+    case "CREATE_PWD":
+      return (state = { ...state, createPwd: action.payload });
+    case "CONFIRM_PWD":
+      return (state = { ...state, confirmPwd: action.payload });
 
     default:
       return state;

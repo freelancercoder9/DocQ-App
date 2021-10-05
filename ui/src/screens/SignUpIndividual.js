@@ -1,6 +1,6 @@
 import React from "react";
 import LeftSignup from "../components/LeftSignup";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
   getConfirmPwd,
   getCreatepwd,
@@ -9,10 +9,20 @@ import {
   getLastName,
 } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
+import { user_SignUp_Service } from "../services/UserServices";
 
 function SignUpIndividual() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const indData_Display = useSelector((state) => state.signUpInd);
+  const onClickCreateAccount = async () => {
+    const res = await user_SignUp_Service(indData_Display);
+    console.log("res from service:", res);
+    history.push("/dashboardScreen");
+  };
+  const onClickBackToHome = () => {
+    history.push("/homePage");
+  };
   return (
     <div className="grid grid-cols-3  BeforeSignUp-main h-full">
       <div className="col-span-1 flex justify-center items-center LeftSignup">
@@ -32,7 +42,7 @@ function SignUpIndividual() {
                 type="text"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   dispatch(getFirstName(e.target.value));
                 }}
               />
@@ -45,7 +55,7 @@ function SignUpIndividual() {
                 type="text"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   dispatch(getLastName(e.target.value));
                 }}
               />
@@ -58,7 +68,7 @@ function SignUpIndividual() {
                 type="text"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   dispatch(getEmailId(e.target.value));
                 }}
               />
@@ -68,10 +78,10 @@ function SignUpIndividual() {
                 Create Password
               </label>
               <input
-                type="text"
+                type="password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   dispatch(getCreatepwd(e.target.value));
                 }}
               />
@@ -81,34 +91,32 @@ function SignUpIndividual() {
                 Confirm Password
               </label>
               <input
-                type="text"
+                type="password"
                 className="border-2 border-gray-200 w-7/12 h-7 px-2 text-xl font-light"
                 onChange={(e) => {
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   dispatch(getConfirmPwd(e.target.value));
                 }}
               />
             </div>
           </div>
           <div className="pb-3 flex justify-center items-center">
-            <NavLink
+            <button
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
               to="/dashboardScreen"
-              onClick={() => {
-                console.log(indData_Display);
-              }}
+              onClick={onClickCreateAccount}
             >
               Create Account
-            </NavLink>
+            </button>
           </div>
         </div>
         <div className="text-center text-blue-700 absolute bottom-0 mb-3 ">
-          <NavLink
+          <button
             className="text-blue-700 font-sans text-xl mb-2 no-underline"
-            to="/homePage"
+            onClick={onClickBackToHome}
           >
             ← Back to Home
-          </NavLink>
+          </button>
         </div>
       </div>
     </div>
