@@ -13,6 +13,11 @@ module.exports = {
       port: 27017,
       dbName: "docq_app",
     },
+    userStatus: {
+      approved: "approved",
+      pending: "pending",
+      rejected: "rejected",
+    },
     api: {
       user: {
         create: "/user/register",
@@ -38,5 +43,6 @@ module.exports = {
         readRejected: "/docs/rejected",
       },
     },
+    roles: { admin: "admin", staff: "staff" },
   },
 };

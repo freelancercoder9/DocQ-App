@@ -1165,7 +1165,7 @@ components:
         - organisationId
         - firstName
         - lastName
-        - emailId
+        - email
         - mobileNo
         - role
         - status
@@ -1176,7 +1176,7 @@ components:
           type: string
         lastName:
           type: string
-        emailId:
+        email:
           type: string
         mobileNo:
           type: string
@@ -1191,12 +1191,12 @@ components:
     DocumentDetails:
       type: object
       required:
-        - emailId
+        - email
         - documentName
         - uploadedDate
         - approvedBy
       properties:
-        emailId:
+        email:
           type: string
         documentName:
           type: string
@@ -1211,7 +1211,7 @@ components:
     OrganizationDetails:
       type: object
       required:
-        - emailId
+        - email
         - mobileNo
         - country
         - state
@@ -1219,7 +1219,7 @@ components:
       properties:
         organisationName:
           type: string
-        emailId:
+        email:
           type: string
         mobileNo:
           type: string
