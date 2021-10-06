@@ -1,9 +1,15 @@
 const SignUpOrgReducer = (state = {}, action) => {
   switch (action.type) {
+    case "FIRST_NAME":
+      return (state = { ...state, firstName: action.payload });
+    case "LAST_NAME":
+      return (state = { ...state, lastName: action.payload });
     case "ORGANISATION_NAME":
       return (state = { ...state, organisationName: action.payload });
     case "USER_NAME":
       return (state = { ...state, userName: action.payload });
+    case "EMAIL_ID":
+      return (state = { ...state, emailId: action.payload });
     case "MOBILE_NO":
       return (state = { ...state, mobileNo: action.payload });
     case "COUNTRY":
@@ -16,8 +22,6 @@ const SignUpOrgReducer = (state = {}, action) => {
       return (state = { ...state, membersCount: action.payload });
     case "CREATE_PWD":
       return (state = { ...state, createPwd: action.payload });
-    case "CONFIRM_PWD":
-      return (state = { ...state, confirmPwd: action.payload });
 
     default:
       return state;

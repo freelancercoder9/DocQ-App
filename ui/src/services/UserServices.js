@@ -32,20 +32,24 @@ async function org_SignUp_Service(serviceData_signUp) {
 async function user_SignUp_Service(serviceData_signUp) {
   const returnResponse = {
     code: 0,
-    message: "string",
+    message: "successfully created",
     data: {
       organisationId: 0,
-      firstName: "string",
-      lastName: "string",
-      emailId: "string",
-      mobileNo: "string",
+      firstName: "test123",
+      lastName: "abc123",
+      emailId: "abc123@gmail.com",
+      mobileNo: "123456",
       role: "string",
       status: "pending",
-      userId: "string",
+      userId: "abc123",
     },
   };
   console.log("input data:", serviceData_signUp);
   console.log("res in service call :", returnResponse);
   return returnResponse;
+}
+async function create_Org_User(serviceData_signUp) {
+  org_SignUp_Service(serviceData_signUp);
+  user_SignUp_Service(serviceData_signUp);
 }
 export { org_SignUp_Service, user_SignUp_Service };
