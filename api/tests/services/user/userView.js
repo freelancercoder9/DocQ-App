@@ -15,59 +15,49 @@ chai.use(chaiHttp);
 const appHost = appConfig.appServer.host;
 const appPort = appConfig.appServer.port;
 const baseUrl = `${appHost}:${appPort}`;
-const baseReqBody = {
-  firstName: "Chandu",
-  lastName: "Pasumarthi",
-  mobileNo: "9237882257",
-  email: "chanduthedev@gmail.com",
-  role: "admin",
-  organisationId: "123",
-  password: "test123",
-};
+const signUpEndPoint = "/user/";
 
-describe("Creating users", () => {
-  describe("Create a user", () => {
-    it("Should create user", (done) => {
+describe("Get user details", () => {
+  describe("Read a user", () => {
+    it("Should get user details", (done) => {
       chai
         .request(baseUrl)
-        .post(appConfig.api.user.create)
-        .send(baseReqBody)
+        .get(`/user/chanduthedev@gmail.com`)
         .end((err, res) => {
           if (err) {
             console.log(err);
             throw new Error("API Error");
           }
-          expect(res.body["code"]).to.equal(respCodes.USER_CREATED.code);
-          expect(res.body["message"]).to.equal(respCodes.USER_CREATED.message);
+          expect(res.body["code"]).to.equal(respCodes.USER_DETAILS_FOUND.code);
+          expect(res.body["message"]).to.equal(
+            respCodes.USER_DETAILS_FOUND.message
+          );
           expect(res.body).to.have.property("data");
 
           const resBodyData = res.body.data;
-          expect(resBodyData).to.have.property("createdTimestamp");
+          expect(resBodyData).to.have.property("mobileNo");
+          expect(resBodyData).to.have.property("status");
+          expect(resBodyData).to.have.property("role");
           expect(resBodyData).to.have.property("firstName");
-          expect(resBodyData.firstName).to.equal("Chandu");
+          expect(resBodyData).to.have.property("lastName");
+          expect(resBodyData).to.have.property("organisationId");
           done();
         });
     });
   });
-  describe("User already exists", () => {
-    const requestBody = {};
-    requestBody["userName"] = "chandu";
-    requestBody["password"] = "test123";
-    requestBody["email"] = "chanduthedev@gmail.com";
-
-    it("Should show user already exists error message", (done) => {
+  describe("Get user details which doesn't exists", () => {
+    it("Should get user not exists error message", (done) => {
       chai
         .request(baseUrl)
-        .post(appConfig.api.user.create)
-        .send(baseReqBody)
+        .get(`/user/chandu1@gmail.com`)
         .end((err, res) => {
           if (err) {
             console.log(err);
             throw new Error("API Error");
           }
-          expect(res.body["code"]).to.equal(respCodes.USER_ALREADY_EXISTS.code);
+          expect(res.body["code"]).to.equal(respCodes.USER_DOESNOT_EXISTS.code);
           expect(res.body["message"]).to.equal(
-            respCodes.USER_ALREADY_EXISTS.message
+            respCodes.USER_DOESNOT_EXISTS.message
           );
           done();
         });

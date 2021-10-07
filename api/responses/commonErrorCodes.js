@@ -255,4 +255,14 @@ module.exports = {
     code: 40046,
     message: "Organization ID is invalid.",
   },
+  MISSING_ORG_MEMBER_CNT: {
+    status: 400,
+    code: 40047,
+    message: "Organization memebr count required.",
+  },
+  INVALID_ORG_MEMBER_CNT: {
+    status: 400,
+    code: 40048,
+    message: "Organization member count is invalid.",
+  },
 };

@@ -14,6 +14,7 @@ module.exports = {
       dbName: "docq_app",
     },
     userStatus: {
+      all: "all",
       approved: "approved",
       pending: "pending",
       rejected: "rejected",
@@ -22,13 +23,10 @@ module.exports = {
       user: {
         create: "/user/register",
         login: "/user/login",
-        updateDetails: "/user/update",
+        update: "/user/update",
         deteleUser: "/user/",
         read: "/user/",
-        readAll: "/users/all",
-        readPending: "/users/pending",
-        readApproved: "/users/approved",
-        readRejected: "/users/rejected",
+        readUsers: "/users/",
       },
       organization: {
         create: "/org/register",
