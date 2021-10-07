@@ -16,12 +16,16 @@ function apiRoutes(app) {
     .post(require("../services/users/userLogin").processRequest);
 
   app
-    .route("/user/:status")
+    .route("/user/update")
+    .patch(require("../services/users/userUpdate").process);
+
+  app
+    .route("/users/:status")
     .get(require("../services/users/userStatusRead").process);
 
   app
     .route("/user/:id")
-    .get(require("../services/users/userRead").process)
+    .get(require("../services/users/userView").process)
     .delete(require("../services/users/userDelete").process);
 
   // Organization API's
@@ -38,8 +42,6 @@ function apiRoutes(app) {
     .patch(require("../services/organizations/orgUpdate").process);
 
   // Docs API's
-  app
-    .route("/docs/:status")
-    .get(require("../services/docs/docStatusRead").process);
+  app.route("/docs/:status").get(require("../services/docs/docRead").process);
 }
 module.exports = apiRoutes;

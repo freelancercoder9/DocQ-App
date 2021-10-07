@@ -11,6 +11,12 @@ const docsSchema = new mongoose.Schema({
   uploaded_date: { type: Date, required: true },
   approved_date: { type: Date },
   approved_by: { type: String },
+  status: {
+    type: String,
+    required: true,
+    default: "pending",
+    enum: ["pending", "approved", "rejected"],
+  },
 });
 
 module.exports = mongoose.model("DocsSchema", docsSchema);

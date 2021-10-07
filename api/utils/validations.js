@@ -130,6 +130,32 @@ function validateCountryName(countryName) {
 }
 exports.validateCountryName = validateCountryName;
 
+function validateOrgMembersCount(memberCnt) {
+  if (typeof memberCnt === "undefined") {
+    return {
+      status: commonErrorCodes.MISSING_ORG_MEMBER_CNT.status,
+      code: commonErrorCodes.MISSING_ORG_MEMBER_CNT.code,
+      message: commonErrorCodes.MISSING_ORG_MEMBER_CNT.message,
+    };
+  }
+  if (!memberCnt) {
+    return {
+      status: commonErrorCodes.INVALID_ORG_MEMBER_CNT.status,
+      code: commonErrorCodes.INVALID_ORG_MEMBER_CNT.code,
+      message: commonErrorCodes.INVALID_ORG_MEMBER_CNT.message,
+    };
+  }
+  if (memberCnt && typeof memberCnt !== "number") {
+    return {
+      status: commonErrorCodes.INVALID_ORG_MEMBER_CNT.status,
+      code: commonErrorCodes.INVALID_ORG_MEMBER_CNT.code,
+      message: commonErrorCodes.INVALID_ORG_MEMBER_CNT.message,
+    };
+  }
+  return commonErrorCodes.SUCCESS;
+}
+exports.validateOrgMembersCount = validateOrgMembersCount;
+
 function validateCityName(cityName) {
   if (typeof cityName === "undefined") {
     return {
@@ -472,6 +498,53 @@ function validatePasswordFormat(password) {
 }
 exports.validatePasswordFormat = validatePasswordFormat;
 
+function validateCreateOrgRequestBody(requestBody) {
+  try {
+    if (Object.keys(requestBody).length === 0) {
+      return {
+        status: commonErrorCodes.BAD_REQUEST.status,
+        code: commonErrorCodes.BAD_REQUEST.code,
+        message: commonErrorCodes.BAD_REQUEST.message,
+      };
+    }
+
+    const checkEmail = validateEmail(requestBody.email);
+    if (checkEmail["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkEmail;
+    }
+
+    const checkCountryName = validateCountryName(requestBody.country);
+    if (checkCountryName["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkCountryName;
+    }
+
+    const checkState = validateStateName(requestBody.state);
+    if (checkState["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkState;
+    }
+
+    const checkCity = validateCityName(requestBody.city);
+    if (checkCity["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkCity;
+    }
+
+    const checkMemberCnt = validateOrgMembersCount(requestBody.membersCount);
+    if (checkMemberCnt["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkMemberCnt;
+    }
+
+    return commonErrorCodes.SUCCESS;
+  } catch (e) {
+    console.log(e);
+    return {
+      status: commonErrorCodes.BAD_REQUEST.status,
+      code: commonErrorCodes.BAD_REQUEST.code,
+      message: commonErrorCodes.BAD_REQUEST.message,
+    };
+  }
+}
+exports.validateCreateOrgRequestBody = validateCreateOrgRequestBody;
+
 function validateCreateUserRequestBody(requestBody) {
   try {
     if (Object.keys(requestBody).length === 0) {
@@ -529,6 +602,71 @@ function validateCreateUserRequestBody(requestBody) {
 }
 exports.validateCreateUserRequestBody = validateCreateUserRequestBody;
 
+function validateUpdateUserRequestBody(requestBody) {
+  try {
+    if (Object.keys(requestBody).length === 0) {
+      return {
+        status: commonErrorCodes.BAD_REQUEST.status,
+        code: commonErrorCodes.BAD_REQUEST.code,
+        message: commonErrorCodes.BAD_REQUEST.message,
+      };
+    }
+
+    const checkOrgId = validateOrgId(requestBody.organisationId);
+    if (checkOrgId["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkOrgId;
+    }
+    const checkEmail = validateEmail(requestBody.email);
+    if (checkEmail["status"] !== commonErrorCodes.SUCCESS.status) {
+      return checkEmail;
+    }
+
+    if (requestBody.firstName) {
+      const checkFirstName = validateFirstName(requestBody.firstName);
+      if (checkFirstName["status"] !== commonErrorCodes.SUCCESS.status) {
+        return checkFirstName;
+      }
+    }
+
+    if (requestBody.lastName) {
+      const checkLastName = validateLastName(requestBody.lastName);
+      if (checkLastName["status"] !== commonErrorCodes.SUCCESS.status) {
+        return checkLastName;
+      }
+    }
+
+    if (requestBody.mobileNo) {
+      const checkMobileNo = validateMobileNo(requestBody.mobileNo);
+      if (checkMobileNo["status"] !== commonErrorCodes.SUCCESS.status) {
+        return checkMobileNo;
+      }
+    }
+
+    if (requestBody.role) {
+      const checkRole = validateRole(requestBody.role);
+      if (checkRole["status"] !== commonErrorCodes.SUCCESS.status) {
+        return checkRole;
+      }
+    }
+
+    if (requestBody.status) {
+      const checkStatus = validateUserStatus(requestBody.status);
+      if (checkStatus["status"] !== commonErrorCodes.SUCCESS.status) {
+        return checkStatus;
+      }
+    }
+
+    return commonErrorCodes.SUCCESS;
+  } catch (e) {
+    console.log(e);
+    return {
+      status: commonErrorCodes.BAD_REQUEST.status,
+      code: commonErrorCodes.BAD_REQUEST.code,
+      message: commonErrorCodes.BAD_REQUEST.message,
+    };
+  }
+}
+exports.validateUpdateUserRequestBody = validateUpdateUserRequestBody;
 function validateLoginUserRequestBody(requestBody) {
   try {
     if (Object.keys(requestBody).length === 0) {

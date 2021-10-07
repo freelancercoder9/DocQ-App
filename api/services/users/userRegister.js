@@ -48,8 +48,16 @@ async function process(req, res) {
     const newUser = await user.save();
 
     if (newUser) {
+      let respData = {};
+      respData.firstName = newUser.first_name;
+      respData.lastName = newUser.last_name;
+      respData.mobileNo = newUser.mobile_no;
+      respData.role = newUser.role;
+      respData.status = newUser.status;
+      respData.createdTimestamp = newUser.created_timestamp;
+      respData.organisationId = newUser.organisation_id;
       return res.status(201).json({
-        data: newUser,
+        data: respData,
         code: commResp.USER_CREATED.code,
         message: commResp.USER_CREATED.message,
       });

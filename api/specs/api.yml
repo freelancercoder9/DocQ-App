@@ -44,7 +44,7 @@ paths:
                         allOf:
                           - $ref: "#/components/schemas/OrganizationDetails"
                         properties:
-                          organisationCode:
+                          organisationId:
                             type: string
         400:
           description: Bad request error
@@ -104,7 +104,7 @@ paths:
                   type: string
                 organisationName:
                   type: string
-                emailId:
+                email:
                   type: string
                 mobileNo:
                   type: string
@@ -250,7 +250,6 @@ paths:
           required: true
           schema:
             type: string
-            example: AP072233
         - in: header
           name: x-access-token
           schema:
@@ -349,8 +348,6 @@ paths:
                         allOf:
                           - $ref: "#/components/schemas/UserDetails"
                         properties:
-                          userId:
-                            type: string
                           status:
                             type: string
                             enum:
@@ -401,7 +398,7 @@ paths:
             schema:
               type: object
               properties:
-                emailId:
+                email:
                   type: string
                 password:
                   type: string
@@ -426,8 +423,6 @@ paths:
                         allOf:
                           - $ref: "#/components/schemas/UserDetails"
                         properties:
-                          userId:
-                            type: string
                           status:
                             type: string
                             enum:
@@ -482,17 +477,15 @@ paths:
             schema:
               type: object
               required:
-                - userId
+                - email
               properties:
-                userId:
+                email:
                   type: string
                 organisationId:
                   type: number
                 firstName:
                   type: string
                 lastName:
-                  type: string
-                emailId:
                   type: string
                 mobileNo:
                   type: string
@@ -565,12 +558,12 @@ paths:
                   - $ref: "#/components/schemas/basicResponse"
       tags:
         - Users API
-  /user/{userId}:
+  /user/{email}:
     get:
       description: "View organisation details"
       parameters:
         - in: path
-          name: userId
+          name: email
           required: true
           schema:
             type: string
@@ -599,8 +592,6 @@ paths:
                         allOf:
                           - $ref: "#/components/schemas/UserDetails"
                         properties:
-                          userId:
-                            type: string
                           status:
                             type: string
                             enum:
@@ -637,11 +628,11 @@ paths:
     delete:
       parameters:
         - in: path
-          name: userId
+          name: email
           required: true
           schema:
             type: string
-            example: AP072233
+            example: chanduthedev@gmail.com
         - in: header
           name: x-access-token
           schema:
@@ -708,175 +699,20 @@ paths:
       tags:
         - Users API
 
-  /users/all:
+  /users/{status}:
     get:
       description: "Get All user details"
       parameters:
-        - in: header
-          name: x-access-token
+        - in: path
+          name: status
+          required: true
           schema:
             type: string
-            format: JWT token
-          required: true
-      responses:
-        200:
-          description: Geting all user details
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-                  - type: object
-                    required:
-                      - data
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          allOf:
-                            - $ref: "#/components/schemas/UserDetails"
-        400:
-          description: Bad request error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-        404:
-          description: User not found
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-
-        500:
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-      tags:
-        - Users API
-  /users/pending:
-    get:
-      description: "Get all pending users"
-      parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-            format: JWT token
-          required: true
-      responses:
-        200:
-          description: Geting all user details
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-                  - type: object
-                    required:
-                      - data
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          allOf:
-                            - $ref: "#/components/schemas/UserDetails"
-        400:
-          description: Bad request error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-        404:
-          description: User not found
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-
-        500:
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-      tags:
-        - Users API
-  /users/approved:
-    get:
-      description: "Get all approved users"
-      parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-            format: JWT token
-          required: true
-      responses:
-        200:
-          description: Geting all user details
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-                  - type: object
-                    required:
-                      - data
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          allOf:
-                            - $ref: "#/components/schemas/UserDetails"
-        400:
-          description: Bad request error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-        404:
-          description: User not found
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-
-        500:
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-      tags:
-        - Users API
-  /users/rejected:
-    get:
-      description: "Get all rejected users"
-      parameters:
+            enum:
+              - all
+              - pending
+              - approved
+              - rejected
         - in: header
           name: x-access-token
           schema:
@@ -929,175 +765,20 @@ paths:
       tags:
         - Users API
 
-  /docs/all:
+  /docs/{status}:
     get:
       description: "Get All user details"
       parameters:
-        - in: header
-          name: x-access-token
+        - in: path
+          name: status
+          required: true
           schema:
             type: string
-            format: JWT token
-          required: true
-      responses:
-        200:
-          description: Geting all user details
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-                  - type: object
-                    required:
-                      - data
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          allOf:
-                            - $ref: "#/components/schemas/DocumentDetails"
-        400:
-          description: Bad request error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-        404:
-          description: User not found
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-
-        500:
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-      tags:
-        - Documents API
-  /docs/pending:
-    get:
-      description: "Get all pending documents"
-      parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-            format: JWT token
-          required: true
-      responses:
-        200:
-          description: Geting all user details
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-                  - type: object
-                    required:
-                      - data
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          allOf:
-                            - $ref: "#/components/schemas/DocumentDetails"
-        400:
-          description: Bad request error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-        404:
-          description: User not found
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-
-        500:
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-      tags:
-        - Documents API
-  /docs/approved:
-    get:
-      description: "Get all approved documents"
-      parameters:
-        - in: header
-          name: x-access-token
-          schema:
-            type: string
-            format: JWT token
-          required: true
-      responses:
-        200:
-          description: Geting all user details
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-                  - type: object
-                    required:
-                      - data
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          allOf:
-                            - $ref: "#/components/schemas/DocumentDetails"
-        400:
-          description: Bad request error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-        404:
-          description: User not found
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-
-        500:
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                allOf:
-                  - $ref: "#/components/schemas/basicResponse"
-      tags:
-        - Documents API
-  /docs/rejected:
-    get:
-      description: "Get all rejected documents"
-      parameters:
+            enum:
+              - all
+              - pending
+              - approved
+              - rejected
         - in: header
           name: x-access-token
           schema:
@@ -1168,7 +849,6 @@ components:
         - email
         - mobileNo
         - role
-        - status
       properties:
         organisationId:
           type: number
@@ -1182,12 +862,6 @@ components:
           type: string
         role:
           type: string
-        status:
-          type: string
-          enum:
-            - pending
-            - approved
-            - rejected
     DocumentDetails:
       type: object
       required:
