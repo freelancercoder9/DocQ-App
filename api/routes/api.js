@@ -11,7 +11,9 @@ function apiRoutes(app) {
     .route("/user/register")
     .post(require("../services/users/userRegister").process);
 
-  app.route("/user/login").post(require("../services/users/userLogin").process);
+  app
+    .route("/user/login")
+    .post(require("../services/users/userLogin").processRequest);
 
   app
     .route("/user/:status")
