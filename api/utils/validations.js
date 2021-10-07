@@ -667,7 +667,6 @@ function validateUpdateUserRequestBody(requestBody) {
   }
 }
 exports.validateUpdateUserRequestBody = validateUpdateUserRequestBody;
-
 function validateLoginUserRequestBody(requestBody) {
   try {
     if (Object.keys(requestBody).length === 0) {
