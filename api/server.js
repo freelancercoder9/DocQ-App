@@ -29,6 +29,9 @@ mongoose
   .connect(mongoDBUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to the Database successfully");
+  })
+  .catch((e) => {
+    console.log("Database connection error: " + e.message);
   });
 
 app.use(bodyParser.json({ limit: "50mb" }));
