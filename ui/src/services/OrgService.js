@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export async function createOrgName(orgCreateData) {
-  console.log(`In request of create Org ${orgCreateData}`);
   const res = axios
     .post("http://192.168.18.3:7777/org/register", orgCreateData)
     .then((response) => {
@@ -14,8 +13,6 @@ export async function createOrgName(orgCreateData) {
       };
     })
     .catch((error) => {
-      console.log(`Response on Error : ${error}`);
-      console.log(error.response.data);
       return {
         returnCode: -1,
         statusCode: error.response.data.code,
@@ -26,12 +23,10 @@ export async function createOrgName(orgCreateData) {
   return res;
 }
 export async function deleteOrgName(orgName) {
-  console.log(`In request of create Org ${orgName}`);
   var newUrl = "http://192.168.18.3:7777/org/" + orgName;
   const res = axios
     .delete(newUrl)
     .then((response) => {
-      console.log(`Response on Success : ${response.data}`);
       return {
         returnCode: 0,
         statusCode: response.data.code,
@@ -40,8 +35,6 @@ export async function deleteOrgName(orgName) {
       };
     })
     .catch((error) => {
-      console.log(`Response on Error : ${error}`);
-      console.log(error.response.data);
       return {
         returnCode: -1,
         statusCode: error.response.data.code,

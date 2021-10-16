@@ -18,6 +18,16 @@ test("createOrg successfully", async () => {
   const response = await services.createOrgName(orgInfo);
   console.log(response);
   expect({
+    data: {
+      organisationName: "orgName5",
+      email: "testEmail5@gmail.com",
+      mobileNo: "1234567899",
+      country: "INDIA",
+      state: "TL",
+      city: "HYD",
+      membersCount: 10,
+      organisationId: "orgName5",
+    },
     returnCode: 0,
     message: "Organization created successfully",
     statusCode: 20006,
@@ -48,6 +58,7 @@ test("deleteOrgTestCase", async () => {
   console.log(response);
   expect({
     returnCode: 0,
+    data: undefined,
     message: "Organization details deleted successfully",
     statusCode: 20006,
   }).toStrictEqual(response);
