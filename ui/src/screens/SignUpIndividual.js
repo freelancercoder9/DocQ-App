@@ -9,15 +9,15 @@ import {
   getLastName,
 } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
-import { user_SignUp_Service } from "../services/UserServices";
+// import { user_SignUp_Service } from "../services/UserServices";
 
 function SignUpIndividual() {
   const history = useHistory();
   const dispatch = useDispatch();
   const indData_Display = useSelector((state) => state.signUpInd);
   const onClickCreateAccount = async () => {
-    const res = await user_SignUp_Service(indData_Display);
-    console.log("res from service:", res);
+    // const res = await user_SignUp_Service(indData_Display);
+    // console.log("res from service:", res);
     history.push("/dashboardScreen");
   };
   const onClickBackToHome = () => {

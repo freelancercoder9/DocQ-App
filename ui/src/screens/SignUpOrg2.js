@@ -10,15 +10,15 @@ import {
   getConfirmPwd,
   setRadioOrgCount,
 } from "../actions";
-import { org_SignUp_Service } from "../services/UserServices";
+// import { org_SignUp_Service } from "../services/UserServices";
 
 function SignUpOrg2() {
   const dispatch = useDispatch();
   const history = useHistory();
   const orgData = useSelector((state) => state.signUpOrg);
   const onClick_createAccount = async () => {
-    const res = await org_SignUp_Service(orgData);
-    console.log("res from service:", res);
+    // const res = await org_SignUp_Service(orgData);
+    // console.log("res from service:", res);
     history.push("/dashboardScreen");
   };
   const onClickBackToHome = () => {
