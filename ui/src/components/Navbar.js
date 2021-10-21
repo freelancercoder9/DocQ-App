@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Navbar() {
+  const history = useHistory();
+  const onClickSignIn = () => {
+    history.push("/signIn");
+  };
+  const onClickSignUp = () => {
+    history.push("/signup");
+  };
   return (
     <div className="  flex h-14">
       <div className="w-3/12 flex items-center px-4 ">
@@ -16,12 +23,18 @@ function Navbar() {
       </div>
       <div className="w-2/12"></div>
       <div className="w-2/12 flex items-center justify-evenly ">
-        <NavLink className="bg-green-400 text-white px-4 py-1 rounded-md no-underline" to="/signIn">
+        <button
+          className="bg-green-400 text-white px-4 py-1 rounded-md no-underline"
+          onClick={onClickSignIn}
+        >
           SignIn
-        </NavLink>
-        <NavLink className="bg-purple-500 text-white px-4 py-1 rounded-md no-underline" to="/signup">
+        </button>
+        <button
+          className="bg-purple-500 text-white px-4 py-1 rounded-md no-underline"
+          onClick={onClickSignUp}
+        >
           Sign Up
-        </NavLink>
+        </button>
       </div>
     </div>
   );

@@ -15,9 +15,9 @@ function SignUpIndividual() {
   const history = useHistory();
   const dispatch = useDispatch();
   const indData_Display = useSelector((state) => state.signUpInd);
-  const onClickCreateAccount = async () => {
-    const res = await user_SignUp_Service(indData_Display);
-    console.log("res from service:", res);
+  const onClickCreateUser = async () => {
+    // const res = await user_SignUp_Service(indData_Display);
+    // console.log("res from service:", res);
     history.push("/dashboardScreen");
   };
   const onClickBackToHome = () => {
@@ -103,10 +103,10 @@ function SignUpIndividual() {
           <div className="pb-3 flex justify-center items-center">
             <button
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
-              to="/dashboardScreen"
-              onClick={onClickCreateAccount}
+              // to="/dashboardScreen"
+              onClick={onClickCreateUser}
             >
-              Create Account
+              Create User
             </button>
           </div>
         </div>

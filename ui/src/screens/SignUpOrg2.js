@@ -17,9 +17,9 @@ function SignUpOrg2() {
   const history = useHistory();
   const orgData = useSelector((state) => state.signUpOrg);
   const onClick_createAccount = async () => {
-    const res = await org_SignUp_Service(orgData);
-    console.log("res from service:", res);
-    history.push("/dashboardScreen");
+    // const res = await org_SignUp_Service(orgData);
+    // console.log("res from service:", res);
+    history.push("/signUpIndividual");
   };
   const onClickBackToHome = () => {
     history.push("/homePage");
@@ -156,7 +156,7 @@ function SignUpOrg2() {
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
               onClick={onClick_createAccount}
             >
-              Create Account
+              Create Org Account
             </button>
           </div>
         </div>

@@ -23,7 +23,11 @@ function App() {
         <Switch>
           <Route path="/" component={HomePage} exact={true}></Route>
           <Route path="/signin" component={SignIn} exact={true}></Route>
-          <Route path="/signup" component={BeforeSignUp} exact={true}></Route>
+          <Route
+            path="/signup"
+            component={SignUpOrganisation}
+            exact={true}
+          ></Route>
           <Route
             path="/dashboardScreen"
             component={DashboardScreen}

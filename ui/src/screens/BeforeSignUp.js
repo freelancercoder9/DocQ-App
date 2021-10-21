@@ -1,12 +1,13 @@
 import React from "react";
 import LeftSignup from "../components/LeftSignup";
 import "../style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setIndividual, setOrganistion } from "../actions";
 
 function BeforeSignUp() {
   const dispatch = useDispatch();
+  // const history = useHistory();
   const accountType = useSelector((state) => state.account_type);
 
   const navLinkDisplay = () => {

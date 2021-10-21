@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CustName from "../Icons/CustName.svg";
 import "../style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import PopUpUser from "./PopUpUser";
 
 function DashBoardNavbar() {
+  // const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
   const popUpToggle = () => {
     setIsOpen(!isOpen);
   };
+  // const onClickDashboard = () => {
+  //   history.push("/dashboardScreen");
+  // };
   return (
     <nav className="flex justify-between DashBoardNavbar-main">
       <div className="text-3xl text-blue-900 font-semibold p-2 ml-4 ">
@@ -19,6 +23,7 @@ function DashBoardNavbar() {
         <NavLink
           className="no-underline px-4 text-gray-500 "
           to="/dashboardScreen"
+          // onClick={onClickDashboard}
           activeClassName="bg-blue-800 text-white rounded"
         >
           Dashboard
