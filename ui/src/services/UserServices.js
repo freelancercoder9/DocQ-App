@@ -1,55 +1,95 @@
-// import axios from "axios";
-async function org_SignUp_Service(serviceData_signUp) {
-  const returnResponse = {
-    code: 0,
-    message: "successfully created",
-    data: {
-      organisationName: "org_test",
-      emailId: "abc123@gmail.com",
-      mobileNo: "98980987",
-      country: "India",
-      state: "Telangana",
-      city: "Hyderabad",
-      membersCount: 1,
-      organisationCode: "001",
-    },
-  };
-  //   const returnResponse = await axios
-  //     .post("http://192.168.18.3:7788/user/register", serviceData_signUp)
-  //     .then((response) => {
-  //       console.log("Success response : ", response);
-  //       return response.data;
-  //     })
-  //     .catch((err) => {
-  //       console.log("catch response : ", err);
-  //       return err.response.data;
-  //     });
-  console.log("input data:", serviceData_signUp);
-  console.log("res in service call :", returnResponse);
-  return returnResponse;
+import axios from "axios";
+
+export async function create_User(serviceData_signUp) {
+  const res = axios
+    .post("http://localhost:7777/user/register", serviceData_signUp)
+    .then((response) => {
+      // console.log(`Response on Success : ${response.data}`);
+      return {
+        returnCode: 0,
+        statusCode: response.data.code,
+        message: response.data.message,
+        data: response.data.data,
+      };
+    })
+    .catch((error) => {
+      return {
+        returnCode: -1,
+        statusCode: error.response.data.code,
+        message: error.response.data.message,
+      };
+    });
+
+  return res;
+}
+export async function delete_User(email_Id) {
+  var newUrl = "http://localhost:7777/user/" + email_Id;
+  const res = axios
+    .delete(newUrl)
+    .then((response) => {
+      // console.log(`Response on delete : ${response.data}`);
+      return {
+        returnCode: 0,
+        statusCode: response.data.code,
+        message: response.data.message,
+        data: response.data.data,
+      };
+    })
+    .catch((error) => {
+      return {
+        returnCode: -1,
+        statusCode: error.response.data.code,
+        message: error.response.data.message,
+      };
+    });
+
+  return res;
 }
 
-async function user_SignUp_Service(serviceData_signUp) {
-  const returnResponse = {
-    code: 0,
-    message: "successfully created",
-    data: {
-      organisationId: 0,
-      firstName: "test123",
-      lastName: "abc123",
-      emailId: "abc123@gmail.com",
-      mobileNo: "123456",
-      role: "string",
-      status: "pending",
-      userId: "abc123",
-    },
-  };
-  console.log("input data:", serviceData_signUp);
-  console.log("res in service call :", returnResponse);
-  return returnResponse;
+export async function get_User(email_Id) {
+  var newUrl = "http://localhost:7777/user/" + email_Id;
+  const res = axios
+    .get(newUrl)
+    .then((response) => {
+      // console.log(`Response on get user : ${response.data}`);
+      return {
+        returnCode: 0,
+        statusCode: response.data.code,
+        message: response.data.message,
+        data: response.data.data,
+      };
+    })
+    .catch((error) => {
+      return {
+        returnCode: -1,
+        statusCode: error.response.data.code,
+        message: error.response.data.message,
+      };
+    });
+
+  return res;
 }
-async function create_Org_User(serviceData_signUp) {
-  org_SignUp_Service(serviceData_signUp);
-  user_SignUp_Service(serviceData_signUp);
+
+export async function get_Users(status) {
+  var newUrl = "http://localhost:7777/users/" + status;
+  const res = axios
+    .get(newUrl)
+    .then((response) => {
+      // console.log(`Response on get user : ${response.data}`);
+      return {
+        returnCode: 0,
+        statusCode: response.data.code,
+        message: response.data.message,
+        data: response.data.data,
+      };
+    })
+    .catch((error) => {
+      return {
+        returnCode: -1,
+        statusCode: error.response.data.code,
+        message: error.response.data.message,
+      };
+    });
+
+  return res;
 }
-export { org_SignUp_Service, user_SignUp_Service };
