@@ -2,9 +2,9 @@ import axios from "axios";
 
 export async function createOrgName(orgCreateData) {
   const res = axios
-    .post("http://192.168.18.3:7777/org/register", orgCreateData)
+    .post("http://localhost:7777/org/register", orgCreateData)
     .then((response) => {
-      console.log(`Response on Success : ${response.data}`);
+      // console.log(`Response on Success : ${response.data}`);
       return {
         returnCode: 0,
         statusCode: response.data.code,
@@ -23,7 +23,7 @@ export async function createOrgName(orgCreateData) {
   return res;
 }
 export async function deleteOrgName(orgName) {
-  var newUrl = "http://192.168.18.3:7777/org/" + orgName;
+  var newUrl = "http://localhost:7777/org/" + orgName;
   const res = axios
     .delete(newUrl)
     .then((response) => {

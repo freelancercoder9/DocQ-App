@@ -16,7 +16,7 @@ test("createOrg successfully", async () => {
     membersCount: 10,
   };
   const response = await services.createOrgName(orgInfo);
-  console.log(response);
+  // console.log(response);
   expect({
     data: {
       organisationName: "orgName5",
@@ -45,7 +45,7 @@ test("createOrgTestCase already exist", async () => {
     membersCount: 10,
   };
   const response = await services.createOrgName(orgInfo);
-  console.log(response);
+  // console.log(response);
   expect({
     returnCode: -1,
     message: "Organization name already exists.",
@@ -55,7 +55,7 @@ test("createOrgTestCase already exist", async () => {
 
 test("deleteOrgTestCase", async () => {
   const response = await services.deleteOrgName("testEmail5@gmail.com");
-  console.log(response);
+  // console.log(response);
   expect({
     returnCode: 0,
     data: undefined,
