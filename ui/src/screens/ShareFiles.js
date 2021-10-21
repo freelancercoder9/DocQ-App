@@ -1,6 +1,5 @@
 import React from "react";
 import DashBoardNavbar from "../components/DashBoardNavbar";
-
 import successfulUpload from "../Icons/successfulUpload.svg";
 
 function ShareFiles() {

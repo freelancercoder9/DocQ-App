@@ -1,9 +1,17 @@
 import React from "react";
 import "../style.css";
 import DashboardLeft from "../Icons/DashboardLeft.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 function DashboardLeftPane() {
+  const history = useHistory();
+
+  const onClickNewJoinReq = () => {
+    history.push("/newJoinee");
+  };
+  const onClickManageUsers = () => {
+    history.push("/users");
+  };
   return (
     <div>
       <div className="text-center my-2">
@@ -15,19 +23,21 @@ function DashboardLeftPane() {
         </div>
         <div className="text-3xl font-sans my-4">Organisation</div>
 
-        <NavLink
+        <button
           className=" DashboardLeftPane-btn text-base font-semibold  rounded-xl w-44 p-2 mt-4 text-center no-underline text-black"
-          to="/newJoinee"
+          onClick={onClickNewJoinReq}
+          // to="/newJoinee"
         >
           New Join Request
-        </NavLink>
+        </button>
 
-        <NavLink
+        <button
           className=" DashboardLeftPane-btn text-base font-semibold  rounded-xl w-44 p-2 mt-3 text-center no-underline text-black"
-          to="/users"
+          onClick={onClickManageUsers}
+          // to="/users"
         >
           Manage Users
-        </NavLink>
+        </button>
         <div className="w-96 my-4 text-center rounded-xl text-white text-lg font-semibold p-2 bg-purple-600">
           Upgrade Plan
         </div>

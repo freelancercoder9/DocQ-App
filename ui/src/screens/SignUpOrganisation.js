@@ -1,7 +1,7 @@
 import React from "react";
 import LeftSignup from "../components/LeftSignup";
 import "../style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getCountry,
@@ -13,7 +13,15 @@ import {
 
 function SignUpOrganisation() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const orgData_Display = useSelector((state) => state.signUpOrg);
+  const onClickNext = () => {
+    console.log(orgData_Display);
+    history.push("/signUpOrg2");
+  };
+  const onClickBackToHome = () => {
+    history.push("/homePage");
+  };
   return (
     <div className="grid grid-cols-3  BeforeSignUp-main h-full">
       <div className="col-span-1 flex justify-center items-center LeftSignup">
@@ -91,24 +99,21 @@ function SignUpOrganisation() {
             </div>
           </div>
           <div className="pb-3 flex justify-center items-center">
-            <NavLink
+            <button
               className=" BeforeSignUp-button  px-4 py-1  text-white no-underline"
-              to="/signUpOrg2"
-              onClick={() => {
-                console.log(orgData_Display);
-              }}
+              onClick={onClickNext}
             >
               Next
-            </NavLink>
+            </button>
           </div>
         </div>
         <div className="text-center text-blue-700 p-3 absolute bottom-0 mb-3">
-          <NavLink
+          <button
             className="text-blue-700 font-sans text-xl mb-2 no-underline"
-            to="/homePage"
+            onClick={onClickBackToHome}
           >
             ← Back to Home
-          </NavLink>
+          </button>
         </div>
       </div>
     </div>
