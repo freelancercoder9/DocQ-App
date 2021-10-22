@@ -2,14 +2,23 @@ import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import Vector from "../Icons/Vector.svg";
 import Google from "../Icons/Google.svg";
-
+import * as usersList from "../operations/UsersList";
+import { getExisting_UserList, getNewJoinUserList } from "../actions";
+import { useDispatch } from "react-redux";
 function SignIn() {
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const onClickForgotPwd = () => {
     history.push("/forgotPwd");
   };
-  const onClickSignIn = () => {
+  const onClickSignIn = async () => {
+    const responseNewUsers = await usersList.getUsersList("pending");
+    const responseExistingUsers = await usersList.getUsersList("approved");
+    dispatch(getExisting_UserList(responseExistingUsers.data));
+    dispatch(getNewJoinUserList(responseNewUsers.data));
+
+    console.log("UI response:", responseNewUsers);
     history.push("/dashboardScreen");
   };
   const onClickBackBtn = () => {
