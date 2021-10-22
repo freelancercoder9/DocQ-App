@@ -106,3 +106,16 @@ export const selectedDocData = (selectedDocData) => {
     payload: selectedDocData,
   };
 };
+// usersList
+export const getExisting_UserList = (existingUsers) => {
+  return {
+    type: "GET_EXISTING_USER_LIST",
+    payload: existingUsers,
+  };
+};
+export const getNewJoinUserList = (newUsers) => {
+  return {
+    type: "GET_NEW_JOIN_USER_LIST",
+    payload: newUsers,
+  };
+};
