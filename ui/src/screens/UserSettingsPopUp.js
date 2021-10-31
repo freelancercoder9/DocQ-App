@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import closeOutline from "../Icons/closeOutline.svg";
 import morevertical from "../Icons/morevertical.svg";
-import editicon from "../Icons/editicon.svg";
+
 import Select from "react-select";
 import "../style.css";
 

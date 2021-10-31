@@ -1,25 +1,31 @@
 import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Vector from "../Icons/Vector.svg";
 import Google from "../Icons/Google.svg";
 import * as usersList from "../operations/UserOperations";
 import { getExisting_UserList, getNewJoinUserList } from "../actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
 function SignIn() {
   const dispatch = useDispatch();
   const history = useHistory();
-
+  const userUpdatedList = useSelector((state) => state.getUpdatedUsersList);
+  console.log(userUpdatedList);
   const onClickForgotPwd = () => {
     history.push("/forgotPwd");
   };
-  const onClickSignIn = async () => {
+
+  async function callUsersList() {
+    console.log("in service call to get list of users");
     const responseNewUsers = await usersList.getUsersList("pending");
     const responseExistingUsers = await usersList.getUsersList("approved");
     dispatch(getExisting_UserList(responseExistingUsers.data));
     dispatch(getNewJoinUserList(responseNewUsers.data));
+  }
 
-    console.log("UI response:", responseNewUsers);
+  const onClickSignIn = async () => {
     history.push("/dashboardScreen");
+    callUsersList();
   };
   const onClickBackBtn = () => {
     history.push("/homePage");
@@ -58,7 +64,7 @@ function SignIn() {
           </div>
           <div className="pb-3 flex justify-center items-center">
             <button className=" SignIn-button flex justify-evenly items-center w-6/12">
-              <img src={Google} /> Sign In With Google
+              <img src={Google} alt={Google} /> Sign In With Google
             </button>
           </div>
         </div>

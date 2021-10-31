@@ -119,3 +119,19 @@ export const getNewJoinUserList = (newUsers) => {
     payload: newUsers,
   };
 };
+
+export const getUsersList_true = (booleanFlag) => {
+  console.log("action true");
+  return {
+    type: "GET_LATEST_USERS_LIST_TRUE",
+    payload: booleanFlag,
+  };
+};
+
+export const getUsersList_false = (booleanFlag) => {
+  console.log("action false");
+  return {
+    type: "GET_LATEST_USERS_LIST_FALSE",
+    payload: booleanFlag,
+  };
+};

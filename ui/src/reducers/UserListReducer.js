@@ -1,4 +1,4 @@
-function UserListReducer(state = {}, action) {
+export function UserListReducer(state = {}, action) {
   switch (action.type) {
     case "GET_EXISTING_USER_LIST":
       state = { ...state, existingUsers: action.payload };
@@ -11,4 +11,14 @@ function UserListReducer(state = {}, action) {
   }
 }
 
-export default UserListReducer;
+export function getUpdatedUsersList(state = false, action) {
+  switch (action.type) {
+    case "GET_LATEST_USERS_LIST_TRUE":
+      console.log("in reducer : true");
+      return (state = true);
+    case "GET_LATEST_USERS_LIST_FALSE":
+      return (state = false);
+    default:
+      return state;
+  }
+}

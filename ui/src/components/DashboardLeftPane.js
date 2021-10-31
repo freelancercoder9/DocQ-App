@@ -1,7 +1,7 @@
 import React from "react";
 import "../style.css";
 import DashboardLeft from "../Icons/DashboardLeft.svg";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function DashboardLeftPane() {
   const history = useHistory();
@@ -38,9 +38,7 @@ function DashboardLeftPane() {
         >
           Manage Users
         </button>
-        <div className="w-96 my-4 text-center rounded-xl text-white text-lg font-semibold p-2 bg-purple-600">
-          Upgrade Plan
-        </div>
+        <div className="w-96 my-4 text-center rounded-xl text-white text-lg font-semibold p-2 bg-purple-600">Upgrade Plan</div>
       </div>
     </div>
   );

@@ -3,13 +3,27 @@ import editBlue from "../Icons/editBlue.svg";
 import greenTick from "../Icons/greenTick.svg";
 import redCross from "../Icons/redCross.svg";
 import * as services from "../services/UserServices";
+import { useDispatch } from "react-redux";
+
+import { getExisting_UserList, getNewJoinUserList } from "../actions";
+import * as usersList from "../operations/UserOperations";
 
 function NewJoineeList(props) {
+  const dispatch = useDispatch();
+
   async function approve_click(data) {
     console.log("in approve", data);
     const updatedRecord = { ...data, status: "approved", organisationId: data.organisation_id };
     const response = await services.update_User(updatedRecord);
     console.log("operation:", response);
+    callUsersList();
+  }
+  async function callUsersList() {
+    console.log("in service call users NewJoineeList");
+    const responseNewUsers = await usersList.getUsersList("pending");
+    const responseExistingUsers = await usersList.getUsersList("approved");
+    dispatch(getExisting_UserList(responseExistingUsers.data));
+    dispatch(getNewJoinUserList(responseNewUsers.data));
   }
 
   async function reject_click(data) {
@@ -17,6 +31,7 @@ function NewJoineeList(props) {
     const updatedRecord = { ...data, status: "rejected", organisationId: data.organisation_id };
     const response = await services.update_User(updatedRecord);
     console.log("operation:", response);
+    callUsersList();
   }
   return (
     <div>
