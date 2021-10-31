@@ -75,7 +75,29 @@ export async function get_Users(status) {
   const res = axios
     .get(newUrl)
     .then((response) => {
-      // console.log(`Response on get user : ${response.data}`);
+      console.log(`Response on get user : ${response.data.data}`);
+      return {
+        returnCode: 0,
+        statusCode: response.data.code,
+        message: response.data.message,
+        data: response.data.data,
+      };
+    })
+    .catch((error) => {
+      return {
+        returnCode: -1,
+        statusCode: error.response.data.code,
+        message: error.response.data.message,
+      };
+    });
+
+  return res;
+}
+
+export async function update_User(userObject) {
+  const res = axios
+    .patch("http://localhost:7777/user/update", userObject)
+    .then((response) => {
       return {
         returnCode: 0,
         statusCode: response.data.code,
