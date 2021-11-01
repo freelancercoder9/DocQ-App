@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Vector from "../Icons/Vector.svg";
 import Google from "../Icons/Google.svg";
 import * as usersList from "../operations/UserOperations";
-import { getExisting_UserList, getNewJoinUserList } from "../actions";
+import { get_Users_withStatus } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 
 function SignIn() {
@@ -17,10 +17,12 @@ function SignIn() {
 
   async function callUsersList() {
     console.log("in service call to get list of users");
-    const responseNewUsers = await usersList.getUsersList("pending");
-    const responseExistingUsers = await usersList.getUsersList("approved");
-    dispatch(getExisting_UserList(responseExistingUsers.data));
-    dispatch(getNewJoinUserList(responseNewUsers.data));
+    const responsePendingUsers = await usersList.getUsersList("pending");
+    const responseApprovedUsers = await usersList.getUsersList("approved");
+    const responseRejectedUsers = await usersList.getUsersList("rejected");
+    dispatch(get_Users_withStatus({ pendingUsers: responsePendingUsers.data, pendingUsersCount: responsePendingUsers.data.length }));
+    dispatch(get_Users_withStatus({ approvedUsers: responseApprovedUsers.data, approvedUsersCount: responseApprovedUsers.data.length }));
+    dispatch(get_Users_withStatus({ rejectedUsers: responseRejectedUsers.data, rejectedUsersCount: responseRejectedUsers.data.length }));
   }
 
   const onClickSignIn = async () => {

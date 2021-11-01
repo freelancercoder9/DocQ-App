@@ -3,44 +3,34 @@ import ApprovedUserfiles from "../Icons/ApprovedUserfiles.svg";
 import PendingUser from "../Icons/PendingUser.svg";
 import DeniedUser from "../Icons/DeniedUser.svg";
 
-function DashboardRight() {
+function DashboardRight(props) {
   return (
     <div>
       <div className="border border-black bg-white">
         <div className="flex justify-center items-center">
-          <label className="mt-2 text-lg">Files Status</label>
+          <label className="mt-2 text-lg">{props.headerName}</label>
         </div>
         <hr />
         <div className="flex justify-between px-4 my-3">
           <div className="h-full flex ">
-            <img
-              src={ApprovedUserfiles}
-              className="h-full mr-2"
-              alt={ApprovedUserfiles}
-            />
+            <img src={ApprovedUserfiles} className="h-full mr-2" alt={ApprovedUserfiles} />
             <div className="text-lg font-sans">Approved</div>
           </div>
-          <div className="h-6 w-14 bg-green-500 text-center text-white ml-2">
-            258
-          </div>
+          <div className="h-6 w-14 bg-green-500 text-center text-white ml-2">{props.approvedCount}</div>
         </div>
         <div className="flex justify-between px-4 my-3">
           <div className="h-full flex ">
             <img src={PendingUser} className="h-full mr-2" alt={PendingUser} />
             <div className="text-lg font-sans">Pending</div>
           </div>
-          <div className="h-6 w-14 bg-purple-500 text-center text-white ml-2">
-            258
-          </div>
+          <div className="h-6 w-14 bg-purple-500 text-center text-white ml-2">{props.pendingCount}</div>
         </div>
         <div className="flex justify-between px-4 my-3">
           <div className="h-full flex ">
             <img src={DeniedUser} className="h-full mr-2" alt={DeniedUser} />
             <div className="text-lg font-sans">Denied</div>
           </div>
-          <div className="h-6 w-14 bg-red-500 text-center text-white ml-2">
-            258
-          </div>
+          <div className="h-6 w-14 bg-red-500 text-center text-white ml-2">{props.rejectedCount}</div>
         </div>
       </div>
     </div>

@@ -2,8 +2,12 @@ import React from "react";
 import DashboardLeftPane from "../components/DashboardLeftPane";
 import DashBoardNavbar from "../components/DashBoardNavbar";
 import DashboardRight from "../components/DashboardRight";
+import { useSelector } from "react-redux";
 
 function DashboardScreen() {
+  const approvedUsersCount = useSelector((state) => state.userListReducer.approvedUsersCount);
+  const pendingUsersCount = useSelector((state) => state.userListReducer.pendingUsersCount);
+  const rejectedUsersCount = useSelector((state) => state.userListReducer.rejectedUsersCount);
   return (
     <div>
       <div>
@@ -17,10 +21,15 @@ function DashboardScreen() {
             </div>
             <div>
               <div className="mb-5">
-                <DashboardRight></DashboardRight>
+                <DashboardRight headerName={"Files Status"} approvedCount={10} pendingCount={10} rejectedCount={10}></DashboardRight>
               </div>
               <div>
-                <DashboardRight></DashboardRight>
+                <DashboardRight
+                  headerName={"Users Status"}
+                  approvedCount={approvedUsersCount}
+                  pendingCount={pendingUsersCount}
+                  rejectedCount={rejectedUsersCount}
+                ></DashboardRight>
               </div>
             </div>
           </div>

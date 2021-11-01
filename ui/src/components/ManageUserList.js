@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import * as services from "../services/UserServices";
 import { useDispatch } from "react-redux";
 
-import { getExisting_UserList, getNewJoinUserList } from "../actions";
+import { get_Users_withStatus } from "../actions";
 import * as usersList from "../operations/UserOperations";
 
 function ManageUserList(props) {
@@ -21,11 +21,12 @@ function ManageUserList(props) {
   }
 
   async function callUsersList() {
-    console.log("in service call users NewJoineeList");
-    const responseNewUsers = await usersList.getUsersList("pending");
-    const responseExistingUsers = await usersList.getUsersList("approved");
-    dispatch(getExisting_UserList(responseExistingUsers.data));
-    dispatch(getNewJoinUserList(responseNewUsers.data));
+    const responsePendingUsers = await usersList.getUsersList("pending");
+    const responseApprovedUsers = await usersList.getUsersList("approved");
+    const responseRejectedUsers = await usersList.getUsersList("rejected");
+    dispatch(get_Users_withStatus({ pendingUsers: responsePendingUsers.data, pendingUsersCount: responsePendingUsers.data.length }));
+    dispatch(get_Users_withStatus({ approvedUsers: responseApprovedUsers.data, approvedUsersCount: responseApprovedUsers.data.length }));
+    dispatch(get_Users_withStatus({ rejectedUsers: responseRejectedUsers.data, rejectedUsersCount: responseRejectedUsers.data.length }));
   }
 
   async function saveUserCliecked(userStatus, userRole) {

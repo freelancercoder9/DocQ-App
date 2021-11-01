@@ -107,31 +107,10 @@ export const selectedDocData = (selectedDocData) => {
   };
 };
 // usersList
-export const getExisting_UserList = (existingUsers) => {
-  return {
-    type: "GET_EXISTING_USER_LIST",
-    payload: existingUsers,
-  };
-};
-export const getNewJoinUserList = (newUsers) => {
-  return {
-    type: "GET_NEW_JOIN_USER_LIST",
-    payload: newUsers,
-  };
-};
 
-export const getUsersList_true = (booleanFlag) => {
-  console.log("action true");
+export const get_Users_withStatus = (usersList) => {
   return {
-    type: "GET_LATEST_USERS_LIST_TRUE",
-    payload: booleanFlag,
-  };
-};
-
-export const getUsersList_false = (booleanFlag) => {
-  console.log("action false");
-  return {
-    type: "GET_LATEST_USERS_LIST_FALSE",
-    payload: booleanFlag,
+    type: "USERS_LIST_WITH_STATUS",
+    payload: usersList,
   };
 };

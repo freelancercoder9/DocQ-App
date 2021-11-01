@@ -5,13 +5,13 @@ import ManageUsersHeading from "../components/ManageUsersHeading";
 import { useSelector } from "react-redux";
 
 function ManageUsersScreen() {
-  const userListObj = useSelector((state) => state.userListReducer);
+  const userListObj = useSelector((state) => state.userListReducer.approvedUsers);
 
   return (
     <div>
       <DashBoardNavbar></DashBoardNavbar>
       <ManageUsersHeading></ManageUsersHeading>
-      {userListObj.existingUsers.map((item, index) => {
+      {userListObj.map((item, index) => {
         return <ManageUserList userData={item} key={index}></ManageUserList>;
       })}
     </div>

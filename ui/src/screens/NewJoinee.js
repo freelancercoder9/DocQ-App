@@ -6,13 +6,13 @@ import NewJoineeList from "../components/NewJoineeList";
 import { useSelector } from "react-redux";
 
 function NewJoinee() {
-  const userListObj = useSelector((state) => state.userListReducer);
+  const userListObj = useSelector((state) => state.userListReducer.pendingUsers);
 
   return (
     <div>
       <DashBoardNavbar></DashBoardNavbar>
       <NewJoineeHeading></NewJoineeHeading>
-      {userListObj.newJoinUsers.map((item, index) => {
+      {userListObj.map((item, index) => {
         return <NewJoineeList userData={item} key={index}></NewJoineeList>;
       })}
     </div>
