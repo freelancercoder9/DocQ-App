@@ -4,7 +4,7 @@ import SignUpIndReducer from "./SignUpIndReducer";
 import SignUpOrgReducer from "./SignUpOrgReducer";
 import SignUpOrg2Reducer from "./SignUpOrg2Reducer";
 import SelectedFilesReducer from "./SelectedFilesReducer";
-import UserListReducer from "./UserListReducer";
+import { UserListReducer, getUpdatedUsersList } from "./UserListReducer";
 import { combineReducers } from "redux";
 
 const rootReducers = combineReducers({
@@ -15,6 +15,7 @@ const rootReducers = combineReducers({
   signUpOrg2: SignUpOrg2Reducer,
   selectedFile: SelectedFilesReducer,
   userListReducer: UserListReducer,
+  getUpdatedUsersList: getUpdatedUsersList,
 });
 
 export default rootReducers;

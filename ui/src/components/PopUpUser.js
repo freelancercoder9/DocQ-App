@@ -1,5 +1,4 @@
 import React from "react";
-import closeOutline from "../Icons/closeOutline.svg";
 
 function PopUpUser() {
   const onClickBtnlogout = () => {
@@ -9,13 +8,7 @@ function PopUpUser() {
     <div className="my-2 w-32" onClick={onClickBtnlogout}>
       <div className="flex justify-around items-center border-2 rounded-sm">
         <label className="text-2xl ">Logout</label>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
