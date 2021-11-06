@@ -19,6 +19,8 @@ function apiRoutes(app) {
     .route("/user/update")
     .patch(require("../services/users/userUpdate").process);
 
+  app.route("/users").get(require("../services/users/allUsers").process);
+
   app
     .route("/users/:status")
     .get(require("../services/users/userStatusRead").process);

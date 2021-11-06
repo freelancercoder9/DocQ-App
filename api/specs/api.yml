@@ -699,6 +699,61 @@ paths:
       tags:
         - Users API
 
+  /users:
+    get:
+      description: "Get All user details"
+      parameters:
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
   /users/{status}:
     get:
       description: "Get All user details"
@@ -709,7 +764,79 @@ paths:
           schema:
             type: string
             enum:
-              - all
+              - pending
+              - approved
+              - rejected
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Geting all user details
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
+  /{orgId}/users/{status}:
+    get:
+      description: "Get All user details for the given orgId"
+      parameters:
+        - in: path
+          name: orgId
+          required: true
+          schema:
+            type: string
+            enum:
+              - pending
+              - approved
+              - rejected
+        - in: path
+          name: status
+          required: true
+          schema:
+            type: string
+            enum:
               - pending
               - approved
               - rejected
@@ -775,7 +902,6 @@ paths:
           schema:
             type: string
             enum:
-              - all
               - pending
               - approved
               - rejected
