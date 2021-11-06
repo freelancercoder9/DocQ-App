@@ -17,6 +17,7 @@ describe("Complete Unit Test", () => {
     require("./services/user/userStatusRead");
     require("./services/user/userUpdate");
     require("./services/user/userDelete");
+    require("./services/user/allUsers");
   });
 
   describe("Oranization API's", () => {
