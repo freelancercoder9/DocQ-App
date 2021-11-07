@@ -13,14 +13,14 @@ const validations = require("../../utils/validations");
 async function process(req, res) {
   try {
     const orgId = req.params.orgId;
-    const result = validations.validateEmail(orgId);
+    const result = validations.validateOrgId(orgId);
     if (result["status"] !== commonErrCodes.SUCCESS.status) {
       return res.status(result["status"]).json({
         code: result["code"],
         message: result["message"],
       });
     }
-    const orgDetails = await Orgnaization.findOne({ email: orgId });
+    const orgDetails = await Orgnaization.findOne({ organisation_id: orgId });
 
     if (orgDetails) {
       let respData = {};

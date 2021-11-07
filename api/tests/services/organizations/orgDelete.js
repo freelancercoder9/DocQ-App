@@ -22,7 +22,7 @@ describe("Delete Organizations", () => {
     it("Should delete Organization", (done) => {
       chai
         .request(baseUrl)
-        .delete(`/org/chanduthedev@gmail.com`)
+        .delete(`/org/chanduthedev123`)
         .end((err, res) => {
           if (err) {
             console.log(err);
@@ -38,7 +38,7 @@ describe("Delete Organizations", () => {
     it("Should show Organization not exists error message", (done) => {
       chai
         .request(baseUrl)
-        .delete(`/org/chandu1@gmail.com`)
+        .delete(`/org/chandu123`)
         .end((err, res) => {
           if (err) {
             console.log(err);

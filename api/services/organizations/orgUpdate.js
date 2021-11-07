@@ -14,16 +14,26 @@ const appConfig = require("../../appConfig").configuration;
 
 async function process(req, res) {
   try {
-    const { email, mobileNo, state, city, country, membersCount } = req.body;
+    const {
+      organisationId,
+      email,
+      mobileNo,
+      state,
+      city,
+      country,
+      membersCount,
+    } = req.body;
 
-    const result = validations.validateEmail(email);
+    const result = validations.validateOrgId(organisationId);
     if (result["status"] !== commErrorCodes.SUCCESS.status) {
       return res.status(result["status"]).json({
         code: result["code"],
         message: result["message"],
       });
     }
-    let existingOrgDetails = await Organisation.findOne({ email: email });
+    let existingOrgDetails = await Organisation.findOne({
+      organisation_id: organisationId,
+    });
 
     if (!existingOrgDetails) {
       return res.status(404).json({
@@ -41,6 +51,17 @@ async function process(req, res) {
         });
       }
       orgDetailsToUpdate.mobile_no = mobileNo;
+    }
+
+    if (email) {
+      const result = validations.validateEmail(email);
+      if (result["status"] !== commErrorCodes.SUCCESS.status) {
+        return res.status(result["status"]).json({
+          code: result["code"],
+          message: result["message"],
+        });
+      }
+      orgDetailsToUpdate.email = email;
     }
 
     if (country) {

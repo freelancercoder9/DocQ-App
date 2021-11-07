@@ -17,6 +17,7 @@ const appHost = appConfig.appServer.host;
 const appPort = appConfig.appServer.port;
 const baseUrl = `${appHost}:${appPort}`;
 const baseReqBody = {
+  organisationId: "chanduthedev123",
   email: "chanduthedev@gmail.com",
   state: "Andhra Pradesh",
   city: "Guntur",
@@ -24,7 +25,7 @@ const baseReqBody = {
 };
 
 describe("Update Organization Details", () => {
-  describe("Email is required while updating Organization details", () => {
+  describe("organisationId is required while updating Organization details", () => {
     it("Should get email required error", (done) => {
       const reqBody = {
         organisationName: "chanduthedv",
@@ -39,8 +40,8 @@ describe("Update Organization Details", () => {
             console.log(err);
             throw new Error("API Error");
           }
-          expect(res.body["code"]).to.equal(errCodes.MISSING_EMAIL.code);
-          expect(res.body["message"]).to.equal(errCodes.MISSING_EMAIL.message);
+          expect(res.body["code"]).to.equal(errCodes.MISSING_ORG_ID.code);
+          expect(res.body["message"]).to.equal(errCodes.MISSING_ORG_ID.message);
           done();
         });
     });
