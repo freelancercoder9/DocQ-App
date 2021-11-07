@@ -25,6 +25,10 @@ function apiRoutes(app) {
     .get(require("../services/users/allUsersForOrgId").process);
 
   app
+    .route("/:orgId/users/:status")
+    .get(require("../services/users/allUsersForOrgIdWithStatus").process);
+
+  app
     .route("/users/:status")
     .get(require("../services/users/userStatusRead").process);
 
