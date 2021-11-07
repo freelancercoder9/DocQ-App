@@ -22,7 +22,7 @@ describe("Read Organization", () => {
     it("Should get Organization", (done) => {
       chai
         .request(baseUrl)
-        .get(`/org/chanduthedev@gmail.com`)
+        .get(`/org/chanduthedev123`)
         .end((err, res) => {
           if (err) {
             console.log(err);
@@ -42,7 +42,7 @@ describe("Read Organization", () => {
     it("Should show organisation not exists error message", (done) => {
       chai
         .request(baseUrl)
-        .get(`/org/chandu1@gmail.com`)
+        .get(`/org/chandu1`)
         .end((err, res) => {
           if (err) {
             console.log(err);

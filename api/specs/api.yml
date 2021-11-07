@@ -172,12 +172,12 @@ paths:
                   - $ref: "#/components/schemas/basicResponse"
       tags:
         - Organizations API
-  /org/{orgId}:
+  /org/{organisationId}:
     get:
       description: "view user details"
       parameters:
         - in: path
-          name: orgId
+          name: organisationId
           required: true
           schema:
             type: string
@@ -246,7 +246,7 @@ paths:
     delete:
       parameters:
         - in: path
-          name: orgId
+          name: organisationId
           required: true
           schema:
             type: string
@@ -818,12 +818,12 @@ paths:
                   - $ref: "#/components/schemas/basicResponse"
       tags:
         - Users API
-  /{orgId}/users/{status}:
+  /{organisationId}/users/{status}:
     get:
-      description: "Get All user details for the given orgId"
+      description: "Get All user details for the given organisationId"
       parameters:
         - in: path
-          name: orgId
+          name: organisationId
           required: true
           schema:
             type: string

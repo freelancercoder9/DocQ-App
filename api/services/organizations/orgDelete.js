@@ -12,15 +12,18 @@ const validations = require("../../utils/validations");
 
 async function process(req, res) {
   try {
-    const orgId = req.params.orgId;
-    const result = validations.validateEmail(orgId);
+    const organisationId = req.params.orgId;
+    const result = validations.validateOrgId(organisationId);
     if (result["status"] !== commonErrCodes.SUCCESS.status) {
       return res.status(result["status"]).json({
         code: result["code"],
         message: result["message"],
       });
     }
-    const orgDetails = await Organisation.findOneAndDelete({ email: orgId });
+    const orgDetails = await Organisation.findOneAndDelete({
+      organisation_id: organisationId,
+    });
+
     if (orgDetails) {
       return res.status(200).json({
         code: commonResponseCodes.ORG_DELETED.code,

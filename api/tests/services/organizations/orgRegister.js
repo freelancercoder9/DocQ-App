@@ -16,7 +16,7 @@ const appHost = appConfig.appServer.host;
 const appPort = appConfig.appServer.port;
 const baseUrl = `${appHost}:${appPort}`;
 const baseReqBody = {
-  organisationName: "chanduthedv",
+  organisationName: "chanduthedev 123",
   mobileNo: "9237882257",
   email: "chanduthedev@gmail.com",
   country: "India",

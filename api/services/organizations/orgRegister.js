@@ -23,7 +23,8 @@ async function process(req, res) {
   }
 
   try {
-    const existingOrg = await Organisation.find({ email: orgDetails.email });
+    const orgId = orgDetails.organisationName.replace(/\s/g, "");
+    const existingOrg = await Organisation.find({ organisation_id: orgId });
     if (existingOrg.length) {
       return res.status(400).json({
         code: commResp.ORG_ALREADY_EXISTS.code,
@@ -35,7 +36,7 @@ async function process(req, res) {
       organisation_name: orgDetails.organisationName,
       email: orgDetails.email,
       mobile_no: orgDetails.mobileNo,
-      organisation_id: orgDetails.organisationName.replace(/\s/g, ""),
+      organisation_id: orgId,
       country: orgDetails.country,
       city: orgDetails.city,
       state: orgDetails.state,
