@@ -15,9 +15,10 @@ describe("Complete Unit Test", () => {
     require("./services/user/userLogin");
     require("./services/user/userView");
     require("./services/user/userStatusRead");
-    require("./services/user/userUpdate");
     require("./services/user/allUsers");
     require("./services/user/allUsersForOrgId");
+    require("./services/user/allUsersForOrgIdWithStatus");
+    require("./services/user/userUpdate");
     require("./services/user/userDelete");
   });
 
