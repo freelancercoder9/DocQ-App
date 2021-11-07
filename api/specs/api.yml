@@ -754,6 +754,67 @@ paths:
                   - $ref: "#/components/schemas/basicResponse"
       tags:
         - Users API
+  /{organisationId}/users:
+    get:
+      description: "Get All user details for the organisation Id"
+      parameters:
+        - in: path
+          name: organisationId
+          required: true
+          schema:
+            type: string
+
+        - in: header
+          name: x-access-token
+          schema:
+            type: string
+            format: JWT token
+          required: true
+      responses:
+        200:
+          description: Getting all user details for the given organisation Id
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: "#/components/schemas/UserDetails"
+        400:
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/basicResponse"
+      tags:
+        - Users API
   /users/{status}:
     get:
       description: "Get All user details"

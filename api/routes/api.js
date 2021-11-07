@@ -20,6 +20,9 @@ function apiRoutes(app) {
     .patch(require("../services/users/userUpdate").process);
 
   app.route("/users").get(require("../services/users/allUsers").process);
+  app
+    .route("/:orgId/users")
+    .get(require("../services/users/allUsersForOrgId").process);
 
   app
     .route("/users/:status")
