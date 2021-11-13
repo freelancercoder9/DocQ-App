@@ -21,7 +21,7 @@ const baseReqBody = {
   mobileNo: "9237882257",
   email: "chanduthedev@gmail.com",
   role: "admin",
-  organisationId: "123",
+  organisationId: "chanduthedev123",
   password: "test123",
 };
 
